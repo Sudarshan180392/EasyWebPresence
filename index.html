@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Easy Web Presence – Custom Websites for India</title>
+<meta name="description" content="Hand-coded HTML/CSS/JS websites for doctors, researchers & businesses. Lightning fast. Hack-proof. Owned by you. Starting ₹4,999."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" style="display:flex; align-items:flex-end; gap:10px">
+    <img src="logo.jpg" alt="Easy Web Presence" style="height: 44px; width: auto;" />
+    Easy Web Presence
+</a>
+  <ul class="nav-links">
+    <li><a href="About.html">About Us</a></li>
+    <li><a href="how-we-work.html">How We Work</a></li>
+    <li><a href="#usp">Our Services</a></li>
+    <li><a href="#why">Why Us ?</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    
+
+  </ul>
+  <a href="https://wa.me/9163881759666?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" class="nav-cta">Free Quote</a>
+<button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <div class="mobile-panel">
+    <div class="mobile-panel-header">
+      <div class="mobile-panel-logo">Easy<span> Web Presence</span></div>
+      <button class="mobile-close" id="mobileClose">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#usp" class="mobile-link"><span class="m-icon">⚡</span> Our Services</a></li>
+      <li><a href="how-we-work.html" class="mobile-link"><span class="m-icon"></span> How We Work</a></li>
+      <li><a href="#why" class="mobile-link"><span class="m-icon">🛡️</span> Why Us ?</a></li>
+      <li><a href="#pricing" class="mobile-link"><span class="m-icon">₹</span> Pricing</a></li>
+      <li><a href="#faq" class="mobile-link"><span class="m-icon">❓</span> FAQ</a></li>
+    </ul>
+    <div class="mobile-panel-cta">
+      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank">📱 Get a Free Quote on WhatsApp</a>
+      <p class="mobile-panel-note">We reply within the hour · No pressure</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-left">
+    <div class="hero-badge">Made for India &nbsp;·&nbsp; Hand-Coded &nbsp;·&nbsp; Zero Bloat</div>
+    <h1 class="hero-h1">Your Website.<br><em>Lightning Fast.</em>Built to Last.</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Custom HTML/CSS/JS websites for doctors, researchers &amp; businesses — loading in <strong style="color:var(--gold-light);font-weight:600">under 1 second</strong>, hack-proof by architecture, and owned by you forever.</p>
+    <div class="hero-stats">
+      <div><div class="stat-num">&lt;1s</div><div class="stat-label">Load on 4G</div></div>
+      <div><div class="stat-num">0</div><div class="stat-label">Hack Surface</div></div>
+      <div><div class="stat-num">∞</div><div class="stat-label">Ownership</div></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn-gold">View Pricing</a>
+      <a href="#compare" class="btn-outline">How We're Different</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="b-dots">
+          <span style="background:#ff5f57"></span>
+          <span style="background:#febc2e"></span>
+          <span style="background:#28c840"></span>
+        </div>
+        <div class="b-url">🔒 yourname.co.in</div>
+        <div class="b-speed">⚡ 0.8s</div>
+      </div>
+      <div class="mock-hero">
+        <div style="width:50px;height:5px;background:var(--gold);opacity:.7;border-radius:2px"></div>
+        <div style="width:130px;height:12px;background:rgba(255,255,255,.8);border-radius:2px"></div>
+        <div style="width:90px;height:7px;background:rgba(255,255,255,.35);border-radius:2px"></div>
+      </div>
+      <div class="mock-cards">
+        <div class="mock-card"><div style="width:18px;height:18px;background:var(--gold);opacity:.6;border-radius:3px;margin-bottom:6px"></div><div style="height:6px;background:rgba(201,149,74,.2);border-radius:2px;margin-bottom:4px"></div><div style="height:5px;width:60%;background:rgba(201,149,74,.1);border-radius:2px"></div></div>
+        <div class="mock-card"><div style="width:18px;height:18px;background:#4a9bc9;opacity:.6;border-radius:3px;margin-bottom:6px"></div><div style="height:6px;background:rgba(74,155,201,.2);border-radius:2px;margin-bottom:4px"></div><div style="height:5px;width:60%;background:rgba(74,155,201,.1);border-radius:2px"></div></div>
+        <div class="mock-card"><div style="width:18px;height:18px;background:var(--gold-light);opacity:.5;border-radius:3px;margin-bottom:6px"></div><div style="height:6px;background:rgba(226,184,122,.15);border-radius:2px;margin-bottom:4px"></div><div style="height:5px;width:60%;background:rgba(226,184,122,.08);border-radius:2px"></div></div>
+      </div>
+      <div class="mock-wa">📱 Chat with us on WhatsApp</div>
+      <div class="speed-float"><div class="sf-label">Load Time</div><div class="sf-val">0.8s</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="mq-item g">◆ Zero Bloat</span><span class="mq-sep"> | </span>
+    <span class="mq-item">No WordPress Vulnerabilities</span><span class="mq-sep"> | </span>
+    <span class="mq-item g">◆ Static = Secure</span><span class="mq-sep"> | </span>
+    <span class="mq-item">WhatsApp Direct Connect</span><span class="mq-sep"> | </span>
+    <span class="mq-item g">◆ Google Maps Ready</span><span class="mq-sep"> | </span>
+    <span class="mq-item">100% SEO Optimised</span><span class="mq-sep"> | </span>
+    <span class="mq-item g">◆ One-Time Fee</span><span class="mq-sep"> | </span>
+    <span class="mq-item">Your Domain. Your Asset. Forever.</span><span class="mq-sep"> | </span>
+    <span class="mq-item g">◆ Zero Bloat</span><span class="mq-sep"> | </span>
+    <span class="mq-item">No WordPress Vulnerabilities</span><span class="mq-sep"> | </span>
+    <span class="mq-item g">◆ Static = Secure</span><span class="mq-sep"> | </span>
+    <span class="mq-item">WhatsApp Direct Connect</span><span class="mq-sep"> | </span>
+    <span class="mq-item g">◆ Google Maps Ready</span><span class="mq-sep"> | </span>
+    <span class="mq-item">100% SEO Optimised</span><span class="mq-sep"> | </span>
+    <span class="mq-item g">◆ One-Time Fee</span><span class="mq-sep"> | </span>
+    <span class="mq-item">Your Domain. Your Asset. Forever.</span><span class="mq-sep"> | </span>
+  </div>
+</div>
+
+<!-- USP -->
+<section class="section usp-section" id="usp">
+  <div class="s-label">Our Superpowers</div>
+  <h2 class="s-title">Everything Your Website <span>Needs to Succeed</span></h2>
+  <div class="s-rule"></div>
+  <p class="s-sub">Every feature is hand-coded with purpose. No page builders, no templates — just precise, performant web craftsmanship.</p>
+  <div class="usp-grid reveal">
+    <div class="usp-card"><div class="usp-icon">⚡</div><div class="usp-name">Lightning Load Speed</div><div class="usp-desc">Your site loads in under 1 second even on a weak 4G signal. No bloated frameworks or tracking scripts — just the essentials, blazing fast.</div></div>
+    <div class="usp-card"><div class="usp-icon">🔒</div><div class="usp-name">Unhackable by Architecture</div><div class="usp-desc">Static HTML has no database. No database means nothing to inject, nothing to breach. Your professional reputation stays safe, always.</div></div>
+    <div class="usp-card"><div class="usp-icon">📱</div><div class="usp-name">WhatsApp Direct Connect</div><div class="usp-desc">One tap opens a WhatsApp chat with you directly. For Indian patients and clients, this converts 10× better than any contact form.</div></div>
+    <div class="usp-card"><div class="usp-icon">📍</div><div class="usp-name">Google Maps Integration</div><div class="usp-desc">Patients tap Navigate directly from your site. No copy-pasting addresses on a busy morning — instant directions from any phone.</div></div>
+    <div class="usp-card"><div class="usp-icon">🎓</div><div class="usp-name">Scholar Link for Academics</div><div class="usp-desc">Connect your website to your Google Scholar profile. Boost your h-index visibility and make it easy for collaborators to discover your work.</div></div>
+    <div class="usp-card"><div class="usp-icon">🔍</div><div class="usp-name">100% Perfect SEO</div><div class="usp-desc">Hand-written meta tags, structured data, alt text, and semantic HTML. You rank #1 for your own name — not buried in a competitor-filled directory.</div></div>
+    <div class="usp-card"><div class="usp-icon">🏠</div><div class="usp-name">You Own It. Forever.</div><div class="usp-desc">One-time setup fee. No monthly rent. No platform that can delete your profile. Your digital asset belongs to you — not to anyone else.</div></div>
+    <div class="usp-card"><div class="usp-icon">🇮🇳</div><div class="usp-name">India-First Design</div><div class="usp-desc">.co.in domains, ₹ pricing, WhatsApp-first UX, and layouts tuned for Indian mobile networks and browsing habits.</div></div>
+  </div>
+</section>
+
+<!-- WHY NOT WORDPRESS -->
+<section class="section wp-section" id="why">
+  <div class="s-label">The Technical Truth</div>
+  <h2 class="s-title">Why We Don't Use <span>WordPress or Page Builders</span></h2>
+  <div class="s-rule"></div>
+  <p class="s-sub">We hand-code every website in pure HTML, CSS, and JavaScript. Here is exactly why that choice protects you.</p>
+  <div class="wp-grid reveal">
+    <div class="wp-card">
+      <div class="wp-card-icon">⚡</div>
+      <div class="wp-card-title">Lightning-Fast Speed</div>
+      <div class="wp-card-text">WordPress relies on heavy themes, databases, and bloated plugins that slow your site considerably. Custom HTML/CSS/JS sites are feather-light, loading instantly — keeping visitors engaged and significantly improving your SEO rankings.</div>
+    </div>
+    <div class="wp-card">
+      <div class="wp-card-icon">🛡️</div>
+      <div class="wp-card-title">Bulletproof Security</div>
+      <div class="wp-card-text">WordPress is a constant target for hackers due to its widespread use. Vulnerabilities in third-party plugins pose serious risks. A custom static site has no database and no plugins — making it virtually immune to the most common web attacks.</div>
+    </div>
+    <div class="wp-card">
+      <div class="wp-card-icon">🔧</div>
+      <div class="wp-card-title">Zero Maintenance Headaches</div>
+      <div class="wp-card-text">WordPress requires constant updates to core software, themes, and plugins. An update can break your site overnight. Custom code simply works — once deployed, it requires zero forced updates to stay secure and functional.</div>
+    </div>
+    <div class="wp-card">
+      <div class="wp-card-icon">🎨</div>
+      <div class="wp-card-title">100% Customisation</div>
+      <div class="wp-card-text">Page builders force you to work within template limitations. By writing from scratch, we have absolute control over every single pixel and interaction — ensuring your website looks and functions exactly as your business needs, with zero compromises.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="section compare-section" id="compare">
+  <div class="s-label">The Honest Comparison</div>
+  <h2 class="s-title">Generic Builders vs. <span>Easy Web Presence</span></h2>
+  <div class="s-rule"></div>
+  <p class="s-sub">Here is what no one tells you about "free" website builders and directory listings.</p>
+  <div class="compare-wrap reveal">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Generic Listing / DIY Builders</th>
+          <th>Easy Web Presence ◆</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Loading Speed</td><td><span class="crs">✗</span>Slow — bloated scripts delay load 3–8s</td><td><span class="chk">✓</span>Under 1 second on 4G/5G bandwidth</td></tr>
+        <tr><td>Data Privacy</td><td><span class="crs">✗</span>Sells your leads to 50+ competitors</td><td><span class="chk">✓</span>100% private to you</td></tr>
+        <tr><td>Ownership</td><td><span class="crs">✗</span>Rented — stop paying, site disappears</td><td><span class="chk">✓</span>One-time fee, yours forever</td></tr>
+        <tr><td>Competitor Ads</td><td><span class="crs">✗</span>Shows ads for rival doctors/shops</td><td><span class="chk">✓</span>100% your brand, zero ads</td></tr>
+        <tr><td>Security</td><td><span class="crs">✗</span>Database-driven = hackable</td><td><span class="chk">✓</span>Static HTML — no database to breach</td></tr>
+        <tr><td>Google Ranking</td><td><span class="crs">✗</span>Directory ranks above you for your name</td><td><span class="chk">✓</span>Your domain owns your name on Google</td></tr>
+        <tr><td>WhatsApp Button</td><td><span class="crs">✗</span>Not available or locked behind premium</td><td><span class="chk">✓</span>Built-in from Tier 1</td></tr>
+        <tr><td>Custom Branding</td><td><span class="crs">✗</span>Platform watermarks, shared templates</td><td><span class="chk">✓</span>Fully unique, coded from scratch</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-section" id="pricing">
+  <div class="s-label">Service Tiers</div>
+  <h2 class="s-title">Transparent Pricing. <span>No Surprises.</span></h2>
+  <div class="s-rule"></div>
+  <p class="s-sub">One-time setup fee — no recurring rent. Pick the tier that fits your practice or business.</p>
+  <div class="tier-grid">
+    <div class="tier-card reveal">
+      <div class="tier-tag">Tier 1</div>
+      <div class="tier-name">Basic</div>
+      <div class="tier-sub">The Digital Clinic</div>
+      <div class="tier-price">₹4,999 <span class="tier-price-end">– ₹6,999</span></div>
+      <div class="tier-ideal">Solo Doctors · PhD Scholars · Small Shops</div>
+      <ul class="tier-features">
+        <li>1 High-Speed Landing Page</li>
+        <li>Pure HTML/CSS/JS — Zero Bloat</li>
+        <li>WhatsApp "Chat With Us" Button</li>
+        <li>Click-to-Call Button</li>
+        <li>Basic SEO (Meta Tags + Indexing)</li>
+        <li>Mobile-First Responsive Design</li>
+        <li>Google Maps Location Pin</li>
+      </ul>
+      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20am%20interested%20in%20the%20Basic%20Tier" target="_blank" class="tier-btn">Get a Quote →</a>
+    </div>
+    <div class="tier-card featured reveal">
+      <div class="tier-tag pop">Most Popular · Tier 2</div>
+      <div class="tier-name">Standard</div>
+      <div class="tier-sub">The Growth Hub</div>
+      <div class="tier-price">₹12,000 <span class="tier-price-end">– ₹18,000</span></div>
+      <div class="tier-ideal">Multi-doctor Clinics · Established Researchers</div>
+      <ul class="tier-features">
+        <li>Up to 5 Pages (Home, Services, Bio…)</li>
+        <li>Custom JS + Blog / Updates Section</li>
+        <li>Custom Inquiry Form + Google Maps</li>
+        <li>Local SEO + Google Business Setup</li>
+        <li>Google Scholar Link for Academics</li>
+        <li>Performance Audit Report</li>
+        <li>3 Months Free Support</li>
+      </ul>
+      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20am%20interested%20in%20the%20Standard%20Tier" target="_blank" class="tier-btn">Get a Quote →</a>
+    </div>
+    <div class="tier-card reveal">
+      <div class="tier-tag">Tier 3</div>
+      <div class="tier-name">Premium</div>
+      <div class="tier-sub">The Authority</div>
+      <div class="tier-price">₹30,000<span class="tier-price-end">+ one-time</span></div>
+      <div class="tier-ideal">Private Hospitals · Research Labs · E-commerce</div>
+      <ul class="tier-features">
+        <li>Unlimited Pages + Dynamic Content</li>
+        <li>Full Custom UI + Advanced JS</li>
+        <li>Database Integration (if required)</li>
+        <li>Advanced Appointment Booking</li>
+        <li>Advanced SEO + Keyword Strategy</li>
+        <li>E-commerce Ready</li>
+        <li>6 Months Priority Support</li>
+      </ul>
+      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20am%20interested%20in%20the%20Premium%20Tier" target="_blank" class="tier-btn">Get a Quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section clients-section" id="clients">
+  <div class="s-label">Who We Serve</div>
+  <h2 class="s-title">Built for <span> Businesses & Professionals</span></h2>
+  <div class="s-rule"></div>
+  <p class="s-sub">Every niche deserves a website as sharp as their expertise.</p>
+  <div class="clients-grid reveal">
+    <div class="client-chip"><span class="ci">🏥</span> Solo Doctors</div>
+    <div class="client-chip"><span class="ci">🦷</span> Dentists</div>
+    <div class="client-chip"><span class="ci">🏨</span> Private Hospitals</div>
+    <div class="client-chip"><span class="ci">🎓</span> PhD Scholars</div>
+    <div class="client-chip"><span class="ci">🔬</span> Research Labs</div>
+    <div class="client-chip"><span class="ci">🛍️</span> Local Shops</div>
+    <div class="client-chip"><span class="ci">⚖️</span> Lawyers</div>
+    <div class="client-chip"><span class="ci">📚</span> Coaching Centres</div>
+    <div class="client-chip"><span class="ci">🍽️</span> Restaurants</div>
+    <div class="client-chip"><span class="ci">🏗️</span> Contractors</div>
+    <div class="client-chip"><span class="ci">💼</span> Consultants</div>
+    <div class="client-chip"><span class="ci">🧘</span> Wellness Studios</div>
+    <div class="client-chip"><span class="ci"></span> Your Business Too !</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="s-label">Frequently Asked Questions</div>
+  <h2 class="s-title">Everything You <span>Need to Know</span></h2>
+  <div class="s-rule"></div>
+  <p class="s-sub">Honest answers to the questions we hear most often from our clients.</p>
+  <div class="faq-list reveal">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        <span class="faq-q-text">What technologies do you use to build websites?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">We build clean, fast, and secure websites by writing custom HTML, CSS, and JavaScript entirely from scratch. We do not use bloated page builders, WordPress themes, or any third-party frameworks that add unnecessary weight to your website.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        <span class="faq-q-text">Do you provide domain and hosting services?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Hosting, domain registration, and infrastructure are the client's responsibility. However, if you need assistance setting these up, we can explicitly contract these services for you at a separately agreed cost.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        <span class="faq-q-text">What happens if I need changes after the website is delivered?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">We offer minor post-delivery support as mutually agreed upon at the time of engagement. This includes simple text edits, bug fixes, and minor corrections. Major updates, new sections, or new feature modifications will be scoped and billed separately.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        <span class="faq-q-text">How do I submit my payment details to start a project?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Once you complete your online payment, simply send your transaction ID along with a screenshot of the payment confirmation to our official WhatsApp number. Your project will be initiated upon verification of the payment.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        <span class="faq-q-text">Why don't you use WordPress or other page builders to design websites?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        We choose to hand-code our websites using pure HTML, CSS, and JavaScript because it provides a vastly superior end product. Here is exactly why:
+        <ul>
+          <li><strong>Lightning-Fast Speed:</strong> WordPress relies on heavy themes, databases, and bloated plugins that slow your site considerably. Custom HTML/CSS/JS sites are feather-light, loading instantly — which keeps visitors engaged and significantly improves your SEO rankings.</li>
+          <li><strong>Bulletproof Security:</strong> WordPress is a constant target for hackers due to its widespread use. Vulnerabilities in third-party plugins pose serious risks. A custom static site has no database and no plugins — making it virtually immune to the most common web attacks.</li>
+          <li><strong>Zero Maintenance Headaches:</strong> WordPress requires constant updates to core software, themes, and plugins. An update can break your entire site overnight. Custom code simply works — once deployed, it requires zero forced updates to stay secure and functional.</li>
+          <li><strong>100% Customisation:</strong> Page builders force you to work within template limitations. By writing code from scratch, we have absolute control over every single pixel and interaction — ensuring your website looks and functions exactly as your business needs, with zero compromises.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div style="position:relative;z-index:1">
+    <div class="s-label" style="text-align:center">Let's Build Together</div>
+    <h2 class="s-title" style="text-align:center;max-width:100%">Ready for a Website That <span>Truly Works for You?</span></h2>
+    <div class="s-rule" style="margin:1.25rem auto"></div>
+    <p class="s-sub" style="text-align:center;margin:0 auto">Send a WhatsApp message right now. We reply within the hour with a custom quote — no jargon, no pressure.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website%20from%20Easy%20Web%20Presence" target="_blank" class="btn-wa">📱 Chat on WhatsApp</a>
+      <a href="mailto:contact@easywebpresence.co.in" class="btn-outline" style="color:var(--gold-light)">✉ Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Easy Web Presence</div>
+      <p class="footer-brand-desc">Hand-coded HTML/CSS/JS websites for India's doctors, researchers, and businesses. Fast, secure, and owned by you forever.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <ul>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="how-we-work.html">How We Work</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#clients">Who We Serve</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="Refund.html">Refund Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Support</div>
+      <ul>
+        <li><a href="#faq">Frequently Asked Questions</a></li>
+        <li><a href="https://wa.me/916388175966" target="_blank">WhatsApp Support</a></li>
+        <li><a href="mailto:contact@easywebpresence.co.in">Email Support</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Easy Web Presence. All rights reserved.</div>
+    <div class="footer-owner">This website belongs to <a href="https://www.linkedin.com/in/sudarshan-mishra/" style="color:whitesmoke;" target="_blank" >Sudarshan Mishra </a> </div>
+  </div>
+</footer>
+</body>
+</html>

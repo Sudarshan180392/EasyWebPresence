@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Us – Easy Web Presence</title>
+<meta name="description" content="Learn about Easy Web Presence — hand-coded websites for India. Based in Gorakhpur, UP. No templates. No bloat. Just fast, secure, custom-built sites."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --navy:       #0b1526;
+  --navy-mid:   #112040;
+  --navy-light: #1a2f58;
+  --gold:       #c9954a;
+  --gold-light: #e2b87a;
+  --gold-pale:  #f0d9b5;
+  --white:      #f4f0ea;
+  --muted:      rgba(244,240,234,.5);
+  --border:     rgba(201,149,74,.22);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 5vw;
+  background: rgba(11,21,38,.9); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  display: flex; align-items: flex-end; gap: 10px;
+  text-decoration: none;
+}
+.nav-logo img { height: 44px; width: auto; }
+.nav-logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 700; color: var(--gold-light);
+}
+.nav-logo-text span { color: var(--white); font-weight: 400; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: .8rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .25s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+.nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold-light); padding: .55rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: all .25s; }
+.nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+/* HAMBURGER */
+.hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 40px; height: 40px; background: transparent; border: 1px solid var(--border); cursor: pointer; padding: 8px; z-index: 301; transition: border-color .25s; }
+.hamburger:hover { border-color: var(--gold); }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--gold-light); border-radius: 2px; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .25s, width .3s; transform-origin: center; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* MOBILE DRAWER */
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 299; pointer-events: none; }
+.mobile-menu.open { pointer-events: all; }
+.mobile-backdrop { position: absolute; inset: 0; background: rgba(6,10,20,.75); backdrop-filter: blur(4px); opacity: 0; transition: opacity .35s ease; }
+.mobile-menu.open .mobile-backdrop { opacity: 1; }
+.mobile-panel { position: absolute; top: 0; right: 0; width: min(320px, 85vw); height: 100%; background: #0b1a30; border-left: 1px solid var(--border); transform: translateX(100%); transition: transform .38s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; overflow-y: auto; }
+.mobile-menu.open .mobile-panel { transform: translateX(0); }
+.mobile-panel-header { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border); }
+.mobile-panel-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold-light); }
+.mobile-panel-logo span { color: var(--white); font-weight: 400; }
+.mobile-close { background: transparent; border: 1px solid var(--border); color: var(--gold); font-size: 1.2rem; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .2s; }
+.mobile-close:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.mobile-nav-links { list-style: none; padding: 1.5rem 0; flex: 1; }
+.mobile-nav-links li { border-bottom: 1px solid rgba(201,149,74,.1); }
+.mobile-nav-links a { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .9rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s, background .2s, padding-left .2s; }
+.mobile-nav-links a:hover { color: var(--gold-light); background: rgba(201,149,74,.06); padding-left: 2rem; }
+.mobile-nav-links a .m-icon { font-size: 1.1rem; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: rgba(201,149,74,.08); border: 1px solid var(--border); }
+.mobile-panel-cta { padding: 1.5rem; border-top: 1px solid var(--border); }
+.mobile-panel-cta a { display: block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); text-align: center; padding: .9rem; font-family: 'Jost', sans-serif; font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+.mobile-panel-note { font-size: .72rem; color: var(--muted); text-align: center; margin-top: .75rem; }
+
+/* ── HERO ── */
+.about-hero {
+  min-height: 60vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 10rem 7vw 6rem;
+  position: relative; overflow: hidden;
+  background: var(--navy);
+}
+.about-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 50%, rgba(201,149,74,.09) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 80%, rgba(17,32,64,.9) 0%, transparent 60%);
+  pointer-events: none;
+}
+.about-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(201,149,74,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,149,74,.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 820px; }
+.breadcrumb {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.75rem;
+  animation: fadeUp .5s ease both;
+}
+.breadcrumb a { color: var(--gold); text-decoration: none; }
+.breadcrumb span { color: var(--muted); }
+.about-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 700; line-height: .95;
+  color: var(--white); letter-spacing: -.01em;
+  animation: fadeUp .7s .1s ease both;
+}
+.about-hero h1 em { font-style: italic; color: var(--gold-light); display: block; }
+.hero-rule { width: 60px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin: 1.75rem 0; animation: fadeUp .7s .2s ease both; }
+.about-hero-sub {
+  font-size: 1.1rem; line-height: 1.8; font-weight: 300; color: var(--muted);
+  max-width: 600px;
+  animation: fadeUp .7s .25s ease both;
+}
+.about-hero-sub strong { color: var(--gold-light); font-weight: 600; }
+
+/* ── SECTION BASE ── */
+.section { padding: 6rem 7vw; }
+.s-label { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
+.s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; color: var(--white); }
+.s-title span { color: var(--gold-light); font-style: italic; }
+.s-rule { width: 50px; height: 1px; background: var(--gold); margin: 1.25rem 0; opacity: .6; }
+.s-sub { font-size: .95rem; font-weight: 300; color: var(--muted); max-width: 560px; line-height: 1.8; }
+
+/* ── WHO WE ARE ── */
+.who-section { background: var(--navy-mid); }
+.who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3.5rem; }
+.who-text p { font-size: .95rem; color: var(--muted); line-height: 1.9; font-weight: 300; margin-bottom: 1.25rem; }
+.who-text p:last-child { margin-bottom: 0; }
+.who-text strong { color: var(--gold-pale); font-weight: 600; }
+.who-badge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.who-badge {
+  border: 1px solid var(--border);
+  padding: 1.5rem 1.25rem;
+  background: rgba(201,149,74,.03);
+  display: flex; flex-direction: column; gap: .4rem;
+  transition: border-color .25s, background .25s;
+}
+.who-badge:hover { border-color: var(--gold); background: rgba(201,149,74,.07); }
+.who-badge-icon { font-size: 1.6rem; }
+.who-badge-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 700; color: var(--gold-pale); }
+.who-badge-sub { font-size: .78rem; color: var(--muted); font-weight: 300; }
+
+/* ── SERVICES ── */
+.services-section { background: var(--navy); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1px; background: var(--border); margin-top: 3.5rem; }
+.svc-card {
+  background: var(--navy); padding: 2rem 1.75rem;
+  position: relative; overflow: hidden;
+  transition: background .25s;
+}
+.svc-card:hover { background: rgba(201,149,74,.05); }
+.svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+.svc-card:hover::before { transform: scaleX(1); }
+.svc-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+.svc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold-pale); margin-bottom: .4rem; }
+.svc-desc { font-size: .85rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+/* ── VISION ── */
+.vision-section { background: var(--navy-mid); }
+.vision-inner {
+  margin-top: 3rem;
+  border: 1px solid var(--border);
+  padding: 3rem;
+  background: rgba(201,149,74,.03);
+  position: relative; overflow: hidden;
+}
+.vision-inner::before {
+  content: '◆';
+  position: absolute; top: -1.5rem; right: 2.5rem;
+  font-size: 8rem; color: rgba(201,149,74,.04);
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1;
+}
+.vision-text { font-size: 1.05rem; line-height: 1.9; color: var(--muted); font-weight: 300; max-width: 780px; }
+.vision-text strong { color: var(--gold-pale); font-weight: 600; }
+.vision-location {
+  display: inline-flex; align-items: center; gap: .6rem;
+  margin-top: 2rem;
+  border: 1px solid var(--border);
+  padding: .5rem 1.1rem;
+  font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--gold); font-weight: 500;
+}
+
+/* ── WHY CHOOSE US ── */
+.why-section { background: var(--navy); }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
+.why-card {
+  border: 1px solid var(--border);
+  padding: 2.25rem 2rem;
+  background: var(--navy-mid);
+  position: relative; overflow: hidden;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.why-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+.why-card::after {
+  content: attr(data-num);
+  position: absolute; top: 1rem; right: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem; font-weight: 700;
+  color: rgba(201,149,74,.07); line-height: 1;
+  transition: color .25s;
+}
+.why-card:hover::after { color: rgba(201,149,74,.13); }
+.why-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+.why-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold-pale); margin-bottom: .6rem; }
+.why-desc { font-size: .875rem; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
+/* ── CLOSING QUOTE ── */
+.quote-section {
+  background: var(--navy-mid);
+  padding: 7rem 7vw;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.quote-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,149,74,.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6rem; color: rgba(201,149,74,.15);
+  line-height: .5; margin-bottom: 1rem;
+  position: relative; z-index: 1;
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 600; font-style: italic;
+  color: var(--white); max-width: 720px;
+  margin: 0 auto; line-height: 1.3;
+  position: relative; z-index: 1;
+}
+.quote-text span { color: var(--gold-light); }
+.quote-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; position: relative; z-index: 1; }
+.btn-gold { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--navy); border: none; padding: .85rem 2.2rem; font-family: 'Jost', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: all .25s; box-shadow: 0 4px 20px rgba(201,149,74,.3); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,149,74,.45); }
+.btn-outline { background: transparent; color: var(--gold-light); border: 1px solid var(--border); padding: .85rem 2.2rem; font-family: 'Jost', sans-serif; font-weight: 500; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: all .25s; }
+.btn-outline:hover { border-color: var(--gold-light); color: var(--white); transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem 7vw 2rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+.footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); margin-bottom: .75rem; }
+.footer-brand-desc { font-size: .875rem; color: var(--muted); line-height: 1.75; font-weight: 300; max-width: 280px; }
+.footer-col-title { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+.footer-col ul a { font-size: .85rem; color: var(--muted); text-decoration: none; font-weight: 300; transition: color .2s; }
+.footer-col ul a:hover { color: var(--gold-light); }
+.footer-bottom { padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { font-size: .78rem; color: rgba(244,240,234,.3); }
+.footer-owner { font-size: .82rem; color: var(--muted); border: 1px solid var(--border); padding: .35rem .9rem; font-style: italic; font-family: 'Cormorant Garamond', serif; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .who-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; }
+}
+@media (max-width: 600px) {
+  .about-hero h1 { font-size: 2.6rem; }
+  .section { padding: 4.5rem 5vw; }
+  .who-badge-grid { grid-template-columns: 1fr; }
+  .vision-inner { padding: 2rem 1.5rem; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" style="display:flex;align-items:flex-end;gap:10px;text-decoration:none;">
+    <img src="Logo.jpg" alt="Easy Web Presence" style="height:44px;width:auto;"/>
+    <span class="nav-logo-text">Easy<span> Web Presence</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+  <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" class="nav-cta">Free Quote</a>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <div class="mobile-panel">
+    <div class="mobile-panel-header">
+      <div class="mobile-panel-logo">Easy<span> Web Presence</span></div>
+      <button class="mobile-close" id="mobileClose">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-link"><span class="m-icon">🏠</span> Home</a></li>
+      <li><a href="about.html" class="mobile-link"><span class="m-icon">👤</span> About Us</a></li>
+      <li><a href="index.html#usp" class="mobile-link"><span class="m-icon">⚡</span> Services</a></li>
+      <li><a href="index.html#pricing" class="mobile-link"><span class="m-icon">₹</span> Pricing</a></li>
+      <li><a href="index.html#faq" class="mobile-link"><span class="m-icon">❓</span> FAQ</a></li>
+    </ul>
+    <div class="mobile-panel-cta">
+      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank">📱 Get a Free Quote on WhatsApp</a>
+      <p class="mobile-panel-note">We reply within the hour · No pressure</p>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>About Us</span>
+    </div>
+    <h1>We Don't Sell You a Website.<br><em>We Build You a Digital Asset.</em></h1>
+    <div class="hero-rule"></div>
+    <p class="about-hero-sub">
+      Too many Indian businesses are paying monthly "rent" for cookie-cutter websites that load slowly, get hacked, and look like everyone else's.
+      <strong>We decided to do things differently.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="section who-section" id="who">
+  <div class="s-label">Our Story</div>
+  <h2 class="s-title">Hand-Coded. <span>Human-First.</span></h2>
+  <div class="s-rule"></div>
+  <div class="who-grid reveal">
+    <div class="who-text">
+      <p>
+        Easy Web Presence was founded with a clear mission — to give doctors, researchers, shop owners, coaches, and professionals across India a <strong>website that actually works</strong>. Not a rented template. Not a subscription trap. A real, owned, performant digital asset.
+      </p>
+      <p>
+        Based in <strong>Gorakhpur, Uttar Pradesh</strong>, we hand-code every website from scratch using pure HTML, CSS, and JavaScript. No WordPress. No page builders. No borrowed themes. Just clean, precise code that loads fast, stays secure, and belongs entirely to you.
+      </p>
+      <p>
+        Every client works <strong>directly with the developer</strong> — not a sales team, not a support ticket queue. You get honest communication, faster delivery, and a website built around your real business needs.
+      </p>
+      <p>
+        We currently operate as an independent development studio with a long-term vision to grow into a fully registered entity — while staying true to our core promise: <strong>transparent pricing, clean code, and no surprises.</strong>
+      </p>
+    </div>
+    <div class="who-badge-grid">
+      <div class="who-badge">
+        <div class="who-badge-icon">📍</div>
+        <div class="who-badge-title">Based In</div>
+        <div class="who-badge-sub">Gorakhpur, Uttar Pradesh, India</div>
+      </div>
+      <div class="who-badge">
+        <div class="who-badge-icon">💻</div>
+        <div class="who-badge-title">Tech Stack</div>
+        <div class="who-badge-sub">Pure HTML · CSS · JavaScript</div>
+      </div>
+      <div class="who-badge">
+        <div class="who-badge-icon">🌏</div>
+        <div class="who-badge-title">Clients Served</div>
+        <div class="who-badge-sub">India & Globally</div>
+      </div>
+      <div class="who-badge">
+        <div class="who-badge-icon">🤝</div>
+        <div class="who-badge-title">Our Approach</div>
+        <div class="who-badge-sub">Direct. Transparent. Reliable.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="s-label">What We Offer</div>
+  <h2 class="s-title">Services Built Around <span>Your Real Needs</span></h2>
+  <div class="s-rule"></div>
+  <p class="s-sub">Every service is delivered directly — no outsourcing, no third parties, no guesswork.</p>
+  <div class="services-grid reveal">
+    <div class="svc-card">
+      <div class="svc-icon">🖥️</div>
+      <div class="svc-name">Website Design & Development</div>
+      <div class="svc-desc">Custom-coded, mobile-first websites built entirely in HTML, CSS, and JS. Fast, clean, and uniquely yours.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🛒</div>
+      <div class="svc-name">E-commerce Development</div>
+      <div class="svc-desc">Lightweight online stores built for speed and conversions — without bloat.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🌐</div>
+      <div class="svc-name">Domain Purchase Assistance</div>
+      <div class="svc-desc">We guide you through choosing and registering the right domain for your brand.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">⚙️</div>
+      <div class="svc-name">Website Hosting Setup</div>
+      <div class="svc-desc">We set up fast, reliable hosting for your site — including <b>FREE options</b> like GitHub Pages, Netlify or Vercel</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🔍</div>
+      <div class="svc-name">Basic On-Page SEO and Indexing</div>
+      <div class="svc-desc">Hand-written meta tags, structured data, and semantic HTML so Google finds and ranks you correctly.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🔧</div>
+      <div class="svc-name">Maintenance & Support</div>
+      <div class="svc-desc">Minor edits, bug fixes, and post-launch support — handled directly, quickly, and without unnecessary back-and-forth.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="section vision-section" id="vision">
+  <div class="s-label">Where We're Headed</div>
+  <h2 class="s-title">Our Vision for <span>the Future</span></h2>
+  <div class="s-rule"></div>
+  <div class="vision-inner reveal">
+    <p class="vision-text">
+      Easy Web Presence currently operates as an <strong>independent development studio</strong> — lean, focused, and committed to quality over volume. We believe the best web work happens when there's a direct relationship between the person with the idea and the person writing the code.
+      <br><br>
+      Our long-term vision is to grow into a <strong>fully registered business entity</strong> while continuing to serve clients in India and globally. As we scale, our core values will not change: clarity in communication, honesty in pricing, and a relentless focus on performance and stability in every project we deliver.
+      <br><br>
+      We focus on building websites that are <strong>clear, functional, and dependable</strong> — because your website should still be working perfectly five years from now, not requiring constant patching and re-subscriptions.
+    </p>
+    <div class="vision-location">
+      📍 &nbsp; Gorakhpur, Uttar Pradesh, India &nbsp;·&nbsp; Serving clients worldwide
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section why-section" id="why-us">
+  <div class="s-label">Why Choose Us</div>
+  <h2 class="s-title">What Sets Us Apart <span>From the Market</span></h2>
+  <div class="s-rule"></div>
+  <p class="s-sub">These aren't marketing claims. They are structural advantages built into how we work.</p>
+  <div class="why-grid reveal">
+
+    <div class="why-card" data-num="01">
+      <div class="why-icon">✍️</div>
+      <div class="why-title">We Write Every Line of Code</div>
+      <div class="why-desc">No Wix. No WordPress. No page builders. Every website is written from scratch in pure HTML, CSS, and JavaScript — meaning it's faster, lighter, and genuinely yours. Most agencies can't say that.</div>
+    </div>
+
+    <div class="why-card" data-num="02">
+      <div class="why-icon">🏠</div>
+      <div class="why-title">You Own It. Forever.</div>
+      <div class="why-desc">One-time fee. No monthly subscriptions. No "your site disappears if you stop paying." Once delivered, your website is your permanent digital asset — not something rented from a platform.</div>
+    </div>
+
+    <div class="why-card" data-num="03">
+      <div class="why-icon">📶</div>
+      <div class="why-title">Built for Indian Networks</div>
+      <div class="why-desc">Your site loads in under 1 second even on a weak 4G connection. This is not an accident — it's the direct result of writing lightweight code instead of loading 40 plugins. Tier 2 and Tier 3 city clients won't bounce.</div>
+    </div>
+
+    <div class="why-card" data-num="04">
+      <div class="why-icon">🤝</div>
+      <div class="why-title">No Middlemen. Ever.</div>
+      <div class="why-desc">You speak directly with the developer building your site — from the first message to final delivery. No account managers, no miscommunication, no delays caused by internal handoffs. What you say is what gets built.</div>
+    </div>
+
+    <div class="why-card" data-num="05">
+      <div class="why-icon">🔒</div>
+      <div class="why-title">Secure by Design, Not by Patch</div>
+      <div class="why-desc">Static HTML has no database. No database means nothing to hack, nothing to inject, nothing to exploit. WordPress sites get compromised every day. Ours structurally cannot be attacked the same way.</div>
+    </div>
+
+    <div class="why-card" data-num="06">
+      <div class="why-icon">💰</div>
+      <div class="why-title">Honest Pricing. No Fine Print.</div>
+      <div class="why-desc">What we quote is exactly what you pay. No hidden setup fees, no forced upsells, no surprise "maintenance charges" three months later. We'd rather lose a client than mislead one.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLOSING QUOTE -->
+<section class="quote-section">
+  <div class="quote-mark">"</div>
+  <p class="quote-text">
+    Your website should work as hard as you do.<br>
+    <span>Let's build something that lasts.</span>
+  </p>
+  <div class="quote-cta">
+    <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" class="btn-gold">📱 Start on WhatsApp</a>
+    <a href="index.html#pricing" class="btn-outline">View Pricing</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Easy Web Presence</div>
+      <p class="footer-brand-desc">Hand-coded HTML/CSS/JS websites for India's doctors, researchers, and businesses. Fast, secure, and owned by you forever.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#services">How We Work</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#clients">Who We Serve</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="Refund.html">Refund Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Support</div>
+      <ul>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="https://wa.me/916388175966" target="_blank">WhatsApp Support</a></li>
+        <li><a href="mailto:contact@easywebpresence.co.in">Email Support</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Easy Web Presence. All rights reserved.</div>
+    <div class="footer-owner">This website belongs to <a href="https://www.linkedin.com/in/sudarshan-mishra/" style="color:whitesmoke;" target="_blank" >Sudarshan Mishra </a></div>
+  </div>
+</footer>
+
+<script>
+/* Scroll Reveal */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* Stagger service cards */
+document.querySelectorAll('.svc-card').forEach((c, i) => {
+  c.style.transitionDelay = i * 0.07 + 's';
+  c.classList.add('reveal');
+  obs.observe(c);
+});
+
+/* Stagger why cards */
+document.querySelectorAll('.why-card').forEach((c, i) => {
+  c.style.transitionDelay = i * 0.1 + 's';
+  c.classList.add('reveal');
+  obs.observe(c);
+});
+
+/* Hamburger */
+const hamburgerBtn   = document.getElementById('hamburgerBtn');
+const mobileMenu     = document.getElementById('mobileMenu');
+const mobileClose    = document.getElementById('mobileClose');
+const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+function openMenu() { mobileMenu.classList.add('open'); hamburgerBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMenu() { mobileMenu.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow = ''; }
+
+hamburgerBtn.addEventListener('click', openMenu);
+mobileClose.addEventListener('click', closeMenu);
+mobileBackdrop.addEventListener('click', closeMenu);
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+</script>
+</body>
+</html>

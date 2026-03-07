@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Terms & Conditions – Easy Web Presence</title>
+<meta name="description" content="Standard project terms and workflow structure for Easy Web Presence web development services."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --navy:       #0b1526;
+  --navy-mid:   #112040;
+  --gold:       #c9954a;
+  --gold-light: #e2b87a;
+  --gold-pale:  #f0d9b5;
+  --white:      #f4f0ea;
+  --muted:      rgba(244,240,234,.5);
+  --border:     rgba(201,149,74,.22);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 5vw;
+  background: rgba(11,21,38,.9); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: flex; align-items: flex-end; gap: 10px; text-decoration: none; }
+.nav-logo img { height: 44px; width: auto; }
+.nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold-light); }
+.nav-logo-text span { color: var(--white); font-weight: 400; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: .8rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .25s; }
+.nav-links a:hover { color: var(--gold-light); }
+.nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold-light); padding: .55rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: all .25s; }
+.nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+/* HAMBURGER */
+.hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 40px; height: 40px; background: transparent; border: 1px solid var(--border); cursor: pointer; padding: 8px; z-index: 301; transition: border-color .25s; }
+.hamburger:hover { border-color: var(--gold); }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--gold-light); border-radius: 2px; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .25s, width .3s; transform-origin: center; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* MOBILE DRAWER */
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 299; pointer-events: none; }
+.mobile-menu.open { pointer-events: all; }
+.mobile-backdrop { position: absolute; inset: 0; background: rgba(6,10,20,.75); backdrop-filter: blur(4px); opacity: 0; transition: opacity .35s ease; }
+.mobile-menu.open .mobile-backdrop { opacity: 1; }
+.mobile-panel { position: absolute; top: 0; right: 0; width: min(320px, 85vw); height: 100%; background: #0b1a30; border-left: 1px solid var(--border); transform: translateX(100%); transition: transform .38s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; overflow-y: auto; }
+.mobile-menu.open .mobile-panel { transform: translateX(0); }
+.mobile-panel-header { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border); }
+.mobile-panel-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold-light); }
+.mobile-panel-logo span { color: var(--white); font-weight: 400; }
+.mobile-close { background: transparent; border: 1px solid var(--border); color: var(--gold); font-size: 1.2rem; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .2s; }
+.mobile-close:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.mobile-nav-links { list-style: none; padding: 1.5rem 0; flex: 1; }
+.mobile-nav-links li { border-bottom: 1px solid rgba(201,149,74,.1); }
+.mobile-nav-links a { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .9rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s, background .2s, padding-left .2s; }
+.mobile-nav-links a:hover { color: var(--gold-light); background: rgba(201,149,74,.06); padding-left: 2rem; }
+.mobile-nav-links a .m-icon { font-size: 1.1rem; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: rgba(201,149,74,.08); border: 1px solid var(--border); }
+.mobile-panel-cta { padding: 1.5rem; border-top: 1px solid var(--border); }
+.mobile-panel-cta a { display: block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); text-align: center; padding: .9rem; font-family: 'Jost', sans-serif; font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+.mobile-panel-note { font-size: .72rem; color: var(--muted); text-align: center; margin-top: .75rem; }
+
+/* PAGE */
+.page-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 9rem 5vw 6rem;
+}
+.breadcrumb { display: flex; align-items: center; gap: .5rem; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.5rem; }
+.breadcrumb a { color: var(--gold); text-decoration: none; }
+.page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.0; color: var(--white); margin-bottom: .75rem; }
+.page-title span { color: var(--gold-light); font-style: italic; }
+.page-meta { font-size: .78rem; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 1.5rem; }
+.page-rule { width: 50px; height: 1px; background: var(--gold); opacity: .6; margin-bottom: 3rem; }
+
+.intro { font-size: .95rem; line-height: 1.9; color: var(--muted); font-weight: 300; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+
+/* Clause */
+.clause { margin-bottom: 2.5rem; }
+.clause-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold-pale); margin-bottom: .85rem; }
+.clause-title .num { color: var(--gold); font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-right: .4rem; font-family: 'Jost', sans-serif; }
+p.tc { font-size: .9rem; line-height: 1.9; color: var(--muted); font-weight: 300; margin-bottom: .7rem; }
+p.tc:last-child { margin-bottom: 0; }
+p.tc strong { color: var(--gold-pale); font-weight: 600; }
+
+/* Lists */
+ol.tc-ol { list-style: none; padding: 0; margin-top: .5rem; display: flex; flex-direction: column; gap: .55rem; }
+ol.tc-ol > li { font-size: .9rem; line-height: 1.85; color: var(--muted); font-weight: 300; display: flex; gap: .75rem; align-items: flex-start; }
+ol.tc-ol > li strong { color: var(--gold-pale); font-weight: 600; }
+.mk { color: var(--gold); font-weight: 600; font-size: .82rem; flex-shrink: 0; min-width: 18px; padding-top: .1rem; font-family: 'Jost', sans-serif; }
+
+/* Nested */
+ol.tc-sub { list-style: none; padding-left: 1.4rem; margin-top: .5rem; display: flex; flex-direction: column; gap: .4rem; }
+ol.tc-sub li { font-size: .875rem; line-height: 1.8; color: var(--muted); font-weight: 300; display: flex; gap: .65rem; align-items: flex-start; }
+ol.tc-sub li strong { color: var(--gold-pale); font-weight: 600; }
+.mk-sub { color: rgba(201,149,74,.5); font-weight: 500; font-size: .8rem; flex-shrink: 0; min-width: 22px; padding-top: .1rem; font-family: 'Jost', sans-serif; }
+
+.divider { width: 100%; height: 1px; background: var(--border); opacity: .45; margin: 2.5rem 0; }
+
+/* CTA */
+.wa-cta { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); text-align: center; }
+.wa-cta p { font-size: .9rem; color: var(--muted); font-weight: 300; margin-bottom: 1.25rem; line-height: 1.7; }
+.btn-wa { display: inline-flex; align-items: center; gap: .6rem; background: #25D366; color: #fff; padding: .85rem 2rem; font-family: 'Jost', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; transition: all .25s; }
+.btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,211,102,.3); }
+
+/* FOOTER */
+footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem 7vw 2rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+.footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); margin-bottom: .75rem; }
+.footer-brand-desc { font-size: .875rem; color: var(--muted); line-height: 1.75; font-weight: 300; max-width: 280px; }
+.footer-col-title { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+.footer-col ul a { font-size: .85rem; color: var(--muted); text-decoration: none; font-weight: 300; transition: color .2s; }
+.footer-col ul a:hover { color: var(--gold-light); }
+.footer-bottom { padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { font-size: .78rem; color: rgba(244,240,234,.3); }
+.footer-owner { font-size: .82rem; color: var(--muted); border: 1px solid var(--border); padding: .35rem .9rem; font-style: italic; font-family: 'Cormorant Garamond', serif; }
+
+@media (max-width: 960px) {
+  .nav-links { display: none; } .nav-cta { display: none; }
+  .hamburger { display: flex; } .mobile-menu { display: block; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .page-wrap { padding: 8rem 5vw 5rem; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Logo.jpg" alt="Easy Web Presence"/>
+    <span class="nav-logo-text">Easy<span> Web Presence</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="how-we-work.html">How We Work</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+  <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" class="nav-cta">Free Quote</a>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <div class="mobile-panel">
+    <div class="mobile-panel-header">
+      <div class="mobile-panel-logo">Easy<span> Web Presence</span></div>
+      <button class="mobile-close" id="mobileClose">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-link"><span class="m-icon">🏠</span> Home</a></li>
+      <li><a href="about.html" class="mobile-link"><span class="m-icon">👤</span> About Us</a></li>
+      <li><a href="how-we-work.html" class="mobile-link"><span class="m-icon">⚙️</span> How We Work</a></li>
+      <li><a href="index.html#pricing" class="mobile-link"><span class="m-icon">₹</span> Pricing</a></li>
+      <li><a href="index.html#faq" class="mobile-link"><span class="m-icon">❓</span> FAQ</a></li>
+    </ul>
+    <div class="mobile-panel-cta">
+      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank">📱 Get a Free Quote on WhatsApp</a>
+      <p class="mobile-panel-note">We reply ASAP </p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="page-wrap">
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <span>Terms &amp; Conditions</span>
+  </div>
+
+  <h1 class="page-title">Terms &amp; <span>Conditions</span></h1>
+  <p class="page-meta">Easy Web Presence &nbsp;·&nbsp; Gorakhpur, Uttar Pradesh, India &nbsp;·&nbsp; Effective 2026</p>
+  <div class="page-rule"></div>
+
+  <p class="intro">
+    The following terms govern all website design and development engagements between Easy Web Presence and the Client. By initiating a project, both parties agree to abide by the terms outlined below. These terms exist to ensure clarity, protect both parties, and enable a smooth and professional working relationship from start to finish.
+  </p>
+
+  <!-- 1 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">1.</span> Nature of Engagement</div>
+    <p class="tc">EasyWeb Presence (hereinafter referred to as the <strong>"Developer"</strong>) shall provide website design and development services as an independent service provider to the Client. Nothing contained herein shall be construed to create any employer-employee, partnership, or agency relationship.</p>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 2 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">2.</span> Project Scope</div>
+    <p class="tc">The Developer agrees to design, develop, and deploy a custom website (utilizing HTML, CSS, and JavaScript) as per mutually discussed specifications, documented in writing (including email or message records).</p>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span><strong>Base Scope:</strong> Standard projects consist of static front-end development.</span></li>
+      <li><span class="mk">b.</span><span><strong>Backend Services:</strong> Backend development (including but not limited to databases, server-side logic, user authentication, or custom CMS integration) is available as an enhanced service. If backend functionality is required, it must be explicitly defined in the initial scope, will require an extended project timeline, and will be billed at an additional premium rate.</span></li>
+      <li><span class="mk">c.</span><span>Any request outside the defined scope shall be treated as <strong>Additional Services</strong> and billed separately.</span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 3 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">3.</span> Payment Terms</div>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>The total project fee for the website development (including any agreed-upon backend services) shall be mutually agreed upon prior to project initiation.</span></li>
+      <li><span class="mk">b.</span><span><strong>Payment Structure:</strong>
+        <ol class="tc-sub">
+          <li><span class="mk-sub">i.</span><span><strong>50% Advance:</strong> Payable prior to project initiation.</span></li>
+          <li><span class="mk-sub">ii.</span><span><strong>50% Final Payment:</strong> Payable upon completion and prior to final deployment or handover. For large-scale backend projects, custom milestone payments may be negotiated.</span></li>
+        </ol>
+      </span></li>
+      <li><span class="mk">c.</span><span>Work shall commence only upon receipt of the advance payment and all necessary Client content.</span></li>
+      <li><span class="mk">d.</span><span>Additional Services, Enhancements, Integrations, or Revisions beyond the scope shall be invoiced separately.</span></li>
+      <li><span class="mk">e.</span><span><strong>Late Payments &amp; Dormancy:</strong> Delay in payment may result in the temporary suspension of services. If the Client fails to communicate or provide required materials for a period exceeding <strong>30 days</strong>, the project will be considered dormant and the remaining balance will become immediately due.</span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 4 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">4.</span> Project Timeline</div>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>Estimated timelines shall be communicated based on project scope. Project timelines are estimates and are strictly subject to Client cooperation. Projects requiring backend architecture will inherently require extended timelines for secure development, testing, and deployment.</span></li>
+      <li><span class="mk">b.</span><span>The Developer shall not be responsible for delays arising from:
+        <ol class="tc-sub">
+          <li><span class="mk-sub">i.</span><span>Client feedback delays.</span></li>
+          <li><span class="mk-sub">ii.</span><span>Delays in providing content, images, or materials.</span></li>
+          <li><span class="mk-sub">iii.</span><span>Scope modifications.</span></li>
+          <li><span class="mk-sub">iv.</span><span>Third-party dependencies (e.g., domain registrars, hosting setups).</span></li>
+        </ol>
+      </span></li>
+      <li><span class="mk">c.</span><span>Urgent or priority delivery requests outside the standard timeline may attract additional <strong>rush charges</strong>.</span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 5 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">5.</span> Revision Policy</div>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>The project includes <strong>Two (2) Minor Revision Rounds.</strong> Minor revisions are cosmetic and include:
+        <ol class="tc-sub">
+          <li><span class="mk-sub">i.</span><span>Text and copy adjustments.</span></li>
+          <li><span class="mk-sub">ii.</span><span>Small visual refinements (e.g., colour tweaks, font sizing).</span></li>
+          <li><span class="mk-sub">iii.</span><span>Alignment corrections.</span></li>
+        </ol>
+      </span></li>
+      <li><span class="mk">b.</span><span>The following are explicitly <strong>not</strong> considered minor revisions and will be treated as Additional Services:
+        <ol class="tc-sub">
+          <li><span class="mk-sub">i.</span><span>Layout restructuring.</span></li>
+          <li><span class="mk-sub">ii.</span><span>Complete design modifications.</span></li>
+          <li><span class="mk-sub">iii.</span><span>Adding new backend features, forms, or database logic not outlined in the initial scope.</span></li>
+        </ol>
+      </span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 6 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">6.</span> Support Terms</div>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>A standard <strong>14-day post-delivery support period</strong> is included following the final deployment.</span></li>
+      <li><span class="mk">b.</span><span>Included minor support covers:
+        <ol class="tc-sub">
+          <li><span class="mk-sub">i.</span><span>Minor text edits.</span></li>
+          <li><span class="mk-sub">ii.</span><span>Bug fixes (e.g., broken links, mobile responsiveness issues).</span></li>
+        </ol>
+      </span></li>
+      <li><span class="mk">c.</span><span>Major updates, feature modifications, or support requested after the <strong>14-day window</strong> will be billed separately.</span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 7 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">7.</span> Change Management</div>
+    <p class="tc">Any modification request affecting layout, structure, features, backend functionality, integrations, or core behaviour shall be classified as <strong>Additional Services</strong> and costed accordingly. No implicit services shall be assumed. All communication regarding scope changes must be <strong>confirmed in writing.</strong></p>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 8 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">8.</span> Liability &amp; Responsibility</div>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>Web hosting, domain registration, server maintenance, and infrastructure remain the <strong>Client's responsibilities</strong> unless explicitly contracted with the Developer.</span></li>
+      <li><span class="mk">b.</span><span>The Developer's liability is strictly limited to the development services defined under this Agreement.</span></li>
+      <li><span class="mk">c.</span><span>The Developer shall not be liable for:
+        <ol class="tc-sub">
+          <li><span class="mk-sub">i.</span><span>Hosting or server failures.</span></li>
+          <li><span class="mk-sub">ii.</span><span>Third-party platform issues.</span></li>
+          <li><span class="mk-sub">iii.</span><span>External service disruptions.</span></li>
+        </ol>
+      </span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 9 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">9.</span> Client Responsibilities</div>
+    <p class="tc">The Client shall:</p>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>Provide accurate content, text, and materials in a timely manner.</span></li>
+      <li><span class="mk">b.</span><span>Ensure they hold the <strong>legal rights, copyright, and ownership</strong> of all submitted content and images.</span></li>
+      <li><span class="mk">c.</span><span>Provide timely approvals and constructive feedback.</span></li>
+      <li><span class="mk">d.</span><span>Arrange hosting and domain setup unless otherwise contracted.</span></li>
+    </ol>
+    <p class="tc" style="margin-top:.85rem">The Developer shall not be held liable for legal disputes arising from inaccuracies or copyright infringements related to Client-provided materials.</p>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 10 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">10.</span> Intellectual Property &amp; Credits</div>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>Upon full clearance of the final invoice, the Client shall obtain <strong>full usage rights</strong> to the final website deliverables.</span></li>
+      <li><span class="mk">b.</span><span>The Developer retains rights to underlying standard tools, methods, frameworks, and reusable code components.</span></li>
+      <li><span class="mk">c.</span><span><strong>Portfolio Rights:</strong> The Developer reserves the right to display the completed work in their professional portfolio and marketing materials.</span></li>
+      <li><span class="mk">d.</span><span><strong>Developer Credit:</strong> The Developer may place a small, unobtrusive link at the bottom of the Client's website unless a white-label agreement is mutually signed.</span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 11 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">11.</span> Third-Party Services</div>
+    <p class="tc">Where integrations involve third-party platforms or services:</p>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>Developer liability is limited strictly to the <strong>correct technical implementation</strong> of the provided code or API.</span></li>
+      <li><span class="mk">b.</span><span>Performance, availability, and security of those integrations are governed by the respective third-party terms.</span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 12 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">12.</span> Limitation of Liability</div>
+    <p class="tc">To the maximum extent permissible under applicable Indian laws:</p>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>Developer liability is limited solely to the <strong>fees paid for the disputed services.</strong></span></li>
+      <li><span class="mk">b.</span><span>Under no circumstances shall the Developer be liable for indirect, incidental, or consequential business losses or damages.</span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 13 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">13.</span> Termination</div>
+    <ol class="tc-ol">
+      <li><span class="mk">a.</span><span>Either Party may terminate this engagement with <strong>written notice.</strong></span></li>
+      <li><span class="mk">b.</span><span>Conditions of termination:
+        <ol class="tc-sub">
+          <li><span class="mk-sub">i.</span><span>Advance fees are <strong>non-refundable</strong> once work has commenced.</span></li>
+          <li><span class="mk-sub">ii.</span><span>Any completed work beyond the initial advance shall be chargeable proportionally and due immediately upon termination.</span></li>
+        </ol>
+      </span></li>
+    </ol>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 14 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">14.</span> Governing Law &amp; Jurisdiction</div>
+    <p class="tc">This Agreement shall be governed by the <strong>laws of India.</strong> Any disputes arising from this agreement shall be subject to the exclusive jurisdiction of the courts at <strong>Gorakhpur, Uttar Pradesh.</strong></p>
+  </div>
+  <div class="divider"></div>
+
+  <!-- 15 -->
+  <div class="clause">
+    <div class="clause-title"><span class="num">15.</span> Force Majeure</div>
+    <p class="tc">Neither Party shall be held liable for failure or delay in performance caused by events beyond reasonable control, including but not limited to natural disasters, internet outages, or government mandates.</p>
+  </div>
+
+  <!-- WhatsApp CTA -->
+  <div class="wa-cta">
+    <p>Have a question about these terms before starting your project?<br>We're happy to walk you through anything — no jargon, no pressure.</p>
+    <a href="https://wa.me/919999999999?text=Hi%2C%20I%20have%20a%20question%20about%20your%20Terms%20%26%20Conditions" target="_blank" class="btn-wa">
+      📱 Chat With Us on WhatsApp
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Easy Web Presence</div>
+      <p class="footer-brand-desc">Hand-coded HTML/CSS/JS websites for India's doctors, researchers, and businesses. Fast, secure, and owned by you forever.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="how-we-work.html">How We Work</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#clients">Who We Serve</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul>
+       
+        <li><a href="terms.html" style="color:var(--gold-light)">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="Refund.html">Refund Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Support</div>
+      <ul>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="https://wa.me/916388175966" target="_blank">WhatsApp Support</a></li>
+        <li><a href="mailto:contact@easywebpresence.co.in">Email Support</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Easy Web Presence. All rights reserved.</div>
+    <div class="footer-owner">This website belongs to Sudarshan Mishra</div>
+  </div>
+</footer>
+
+<script>
+const hamburgerBtn   = document.getElementById('hamburgerBtn');
+const mobileMenu     = document.getElementById('mobileMenu');
+const mobileClose    = document.getElementById('mobileClose');
+const mobileBackdrop = document.getElementById('mobileBackdrop');
+function openMenu() { mobileMenu.classList.add('open'); hamburgerBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMenu() { mobileMenu.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow = ''; }
+hamburgerBtn.addEventListener('click', openMenu);
+mobileClose.addEventListener('click', closeMenu);
+mobileBackdrop.addEventListener('click', closeMenu);
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+</script>
+</body>
+</html>
