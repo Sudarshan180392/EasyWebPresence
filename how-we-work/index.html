@@ -3,8 +3,56 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>How We Work – Easy Web Presence</title>
-<meta name="description" content="Our transparent, structured web development process — from discovery to launch. Learn exactly how Easy Web Presence delivers your custom website."/>
+
+<!-- SEO: Title & Description -->
+<title>How We Work | Website Development Process – Easy Web Presence</title>
+<meta name="description" content="Easy Web Presence follows a 4-step website development process — discovery, design, development, and launch. Transparent, structured, and delivered in 5 working days. Based in Gorakhpur, UP."/>
+<link rel="canonical" href="https://www.easywebpresence.co.in/how-we-work/"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Sudarshan Mishra – Easy Web Presence"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="How We Work | Website Development Process – Easy Web Presence"/>
+<meta property="og:description" content="Our 4-step website development process — discovery, design, development, and launch. Transparent and delivered in 5 working days."/>
+<meta property="og:url" content="https://www.easywebpresence.co.in/how-we-work/"/>
+<meta property="og:image" content="https://www.easywebpresence.co.in/Logo.jpg"/>
+<meta property="og:site_name" content="Easy Web Presence"/>
+<meta property="og:locale" content="en_IN"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How We Work | Easy Web Presence"/>
+<meta name="twitter:description" content="Our 4-step website development process — transparent, structured, delivered in 5 working days."/>
+<meta name="twitter:image" content="https://www.easywebpresence.co.in/Logo.jpg"/>
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.easywebpresence.co.in/how-we-work/",
+      "url": "https://www.easywebpresence.co.in/how-we-work/",
+      "name": "How We Work | Website Development Process – Easy Web Presence",
+      "description": "Easy Web Presence's 4-step website development process — from discovery to live launch. Transparent, structured, delivered in 5 working days.",
+      "inLanguage": "en-IN",
+      "isPartOf": { "@id": "https://www.easywebpresence.co.in/#website" },
+      "breadcrumb": { "@id": "https://www.easywebpresence.co.in/how-we-work/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.easywebpresence.co.in/how-we-work/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.easywebpresence.co.in/" },
+        { "@type": "ListItem", "position": 2, "name": "How We Work", "item": "https://www.easywebpresence.co.in/how-we-work/" }
+      ]
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -28,7 +76,7 @@ body { font-family: 'Jost', sans-serif; background: var(--navy); color: var(--wh
 ::-webkit-scrollbar-track { background: var(--navy); }
 ::-webkit-scrollbar-thumb { background: var(--gold); }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   display: flex; align-items: center; justify-content: space-between;
@@ -75,7 +123,7 @@ nav {
 .mobile-panel-cta a { display: block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); text-align: center; padding: .9rem; font-family: 'Jost', sans-serif; font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
 .mobile-panel-note { font-size: .72rem; color: var(--muted); text-align: center; margin-top: .75rem; }
 
-/* ── HERO ── */
+/* HERO */
 .page-hero {
   min-height: 58vh;
   display: flex; flex-direction: column; justify-content: center;
@@ -106,7 +154,7 @@ nav {
 .hero-rule { width: 60px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin: 1.75rem 0; animation: fadeUp .7s .2s ease both; }
 .page-hero-sub { font-size: 1.05rem; line-height: 1.8; font-weight: 300; color: var(--muted); max-width: 580px; animation: fadeUp .7s .25s ease both; }
 
-/* ── SECTION BASE ── */
+/* SECTION BASE */
 .section { padding: 6rem 7vw; }
 .s-label { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
 .s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; color: var(--white); }
@@ -114,38 +162,25 @@ nav {
 .s-rule { width: 50px; height: 1px; background: var(--gold); margin: 1.25rem 0; opacity: .6; }
 .s-sub { font-size: .95rem; font-weight: 300; color: var(--muted); max-width: 560px; line-height: 1.8; }
 
-/* ── PROCESS STEPS ── */
+/* PROCESS STEPS */
 .process-section { background: var(--navy-mid); }
-
 .steps-wrapper { margin-top: 4rem; position: relative; }
-
-/* Vertical connector line */
 .steps-wrapper::before {
   content: '';
   position: absolute;
-  left: 28px;
-  top: 0; bottom: 0;
+  left: 28px; top: 0; bottom: 0;
   width: 1px;
   background: linear-gradient(to bottom, var(--gold), rgba(201,149,74,.1));
   z-index: 0;
 }
-
 .step {
   display: grid;
   grid-template-columns: 60px 1fr;
   gap: 0 2.5rem;
   margin-bottom: 0;
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
 }
-
-/* Step number bubble */
-.step-num {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-}
+.step-num { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
 .step-bubble {
   width: 56px; height: 56px;
   border: 1px solid var(--gold);
@@ -160,8 +195,6 @@ nav {
 }
 .step:hover .step-bubble { background: rgba(201,149,74,.1); }
 .step-connector { flex: 1; width: 1px; background: transparent; }
-
-/* Step content card */
 .step-body {
   border: 1px solid var(--border);
   background: rgba(201,149,74,.02);
@@ -179,7 +212,6 @@ nav {
   transition: transform .4s;
 }
 .step-body:hover::before { transform: scaleX(1); }
-
 .step-tag {
   display: inline-block;
   font-size: .68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
@@ -208,7 +240,7 @@ nav {
 .rpill-val { color: var(--gold); font-weight: 600; font-size: .82rem; }
 .rpill-sep { color: var(--border); }
 
-/* Payment timeline bar */
+/* Payment bar */
 .payment-bar {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 1px; background: var(--border);
@@ -218,7 +250,7 @@ nav {
 .pbar-label { font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
 .pbar-val { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold-light); }
 
-/* ── TERMS ── */
+/* TERMS */
 .terms-section { background: var(--navy); }
 .terms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); margin-top: 3.5rem; }
 .term-card {
@@ -234,27 +266,24 @@ nav {
 .term-text { font-size: .875rem; color: var(--muted); line-height: 1.75; font-weight: 300; }
 .term-text strong { color: var(--gold-pale); font-weight: 600; }
 
-/* ── REVISIONS EXPLAINER ── */
+/* REVISIONS */
 .revisions-section { background: var(--navy-mid); }
 .rev-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
 .rev-card { border: 1px solid var(--border); padding: 2rem; background: rgba(201,149,74,.02); }
 .rev-card.yes { border-color: rgba(74,222,128,.2); background: rgba(74,222,128,.03); }
 .rev-card.no  { border-color: rgba(248,113,113,.2); background: rgba(248,113,113,.03); }
 .rev-header { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.25rem; }
-.rev-badge {
-  font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-  padding: .3rem .8rem;
-}
+.rev-badge { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .3rem .8rem; }
 .rev-badge.yes { background: rgba(74,222,128,.12); color: #4ade80; border: 1px solid rgba(74,222,128,.25); }
 .rev-badge.no  { background: rgba(248,113,113,.12); color: #f87171; border: 1px solid rgba(248,113,113,.25); }
-.rev-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); }
+.rev-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
 .rev-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
 .rev-list li { font-size: .875rem; color: var(--muted); font-weight: 300; display: flex; gap: .6rem; align-items: flex-start; line-height: 1.6; }
 .rev-list li::before { font-size: .75rem; flex-shrink: 0; margin-top: .15rem; }
 .rev-card.yes .rev-list li::before { content: '✓'; color: #4ade80; }
 .rev-card.no  .rev-list li::before { content: '✗'; color: #f87171; }
 
-/* ── CLOSING CTA ── */
+/* CTA */
 .cta-section {
   background: var(--navy-mid); padding: 7rem 7vw;
   text-align: center; position: relative; overflow: hidden;
@@ -267,7 +296,7 @@ nav {
 .btn-gold { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--navy); border: none; padding: .9rem 2.4rem; font-family: 'Jost', sans-serif; font-weight: 700; font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: .6rem; transition: all .25s; box-shadow: 0 4px 20px rgba(201,149,74,.3); }
 .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,149,74,.45); }
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem 7vw 2rem; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
 .footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); margin-bottom: .75rem; }
@@ -280,14 +309,14 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 .footer-copy { font-size: .78rem; color: rgba(244,240,234,.3); }
 .footer-owner { font-size: .82rem; color: var(--muted); border: 1px solid var(--border); padding: .35rem .9rem; font-style: italic; font-family: 'Cormorant Garamond', serif; }
 
-/* ── REVEAL ── */
+/* REVEAL */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── ANIMATIONS ── */
+/* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media (max-width: 960px) {
   .footer-top { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
@@ -313,39 +342,39 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">
-    <img src="/Logo.jpg" alt="Easy Web Presence"/>
+    <img src="/Logo.jpg" alt="Easy Web Presence logo" width="44" height="44"/>
     <span class="nav-logo-text">Easy<span> Web Presence</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
     <li><a href="/About/">About Us</a></li>
-    <li><a href="/how-we-work/ class="active">How We Work</a></li>
+    <li><a href="/how-we-work/" class="active">How We Work</a></li>
     <li><a href="/#pricing">Pricing</a></li>
     <li><a href="/#faq">FAQ</a></li>
   </ul>
-  <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" class="nav-cta">Free Quote</a>
-  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+  <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" rel="noopener" class="nav-cta">Free Quote</a>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- MOBILE DRAWER -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
   <div class="mobile-backdrop" id="mobileBackdrop"></div>
   <div class="mobile-panel">
     <div class="mobile-panel-header">
       <div class="mobile-panel-logo">Easy<span> Web Presence</span></div>
-      <button class="mobile-close" id="mobileClose">✕</button>
+      <button class="mobile-close" id="mobileClose" aria-label="Close navigation menu">&#x2715;</button>
     </div>
     <ul class="mobile-nav-links">
       <li><a href="/" class="mobile-link"><span class="m-icon">🏠</span> Home</a></li>
       <li><a href="/About/" class="mobile-link"><span class="m-icon">👤</span> About Us</a></li>
       <li><a href="/how-we-work/" class="mobile-link"><span class="m-icon">⚙️</span> How We Work</a></li>
       <li><a href="/#pricing" class="mobile-link"><span class="m-icon">₹</span> Pricing</a></li>
-      <li><a href="/index.html" class="mobile-link"><span class="m-icon">❓</span> FAQ</a></li>
+      <li><a href="/#faq" class="mobile-link"><span class="m-icon">❓</span> FAQ</a></li>
     </ul>
     <div class="mobile-panel-cta">
-      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank">📱 Get a Free Quote on WhatsApp</a>
+      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" rel="noopener">📱 Get a Free Quote on WhatsApp</a>
       <p class="mobile-panel-note">We reply ASAP</p>
     </div>
   </div>
@@ -354,13 +383,13 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 <!-- HERO -->
 <section class="page-hero">
   <div class="hero-inner">
-    <div class="breadcrumb">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a>
-      <span>›</span>
+      <span aria-hidden="true">›</span>
       <span>How We Work</span>
-    </div>
+    </nav>
     <h1>Every Great Website Starts<br><em>With a Clear Process.</em></h1>
-    <div class="hero-rule"></div>
+    <div class="hero-rule" aria-hidden="true"></div>
     <p class="page-hero-sub">We don't just build websites — we run a structured, transparent engagement from first conversation to final launch. Here is exactly what working with us looks like.</p>
   </div>
 </section>
@@ -369,7 +398,7 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 <section class="section process-section" id="process">
   <div class="s-label">The Process</div>
   <h2 class="s-title">Four Steps to Your <span>Live Website</span></h2>
-  <div class="s-rule"></div>
+  <div class="s-rule" aria-hidden="true"></div>
   <p class="s-sub">A proven, repeatable process that protects your investment and ensures on-time delivery — every time.</p>
 
   <div class="steps-wrapper">
@@ -378,10 +407,11 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
     <div class="step reveal">
       <div class="step-num">
         <div class="step-bubble">01</div>
+        <div class="step-connector"></div>
       </div>
       <div class="step-body">
-        <div class="step-tag">Discovery & Onboarding</div>
-        <div class="step-title">Your Project Begins With <span>a Conversation.</span></div>
+        <div class="step-tag">Discovery &amp; Onboarding</div>
+        <h3 class="step-title">Your Project Begins With <span>a Conversation.</span></h3>
         <div class="step-text">
           We schedule a consultation — via <strong>Google Meet or phone</strong> — to understand your goals, target audience, and requirements in depth. No assumptions, no templates. Just a focused discussion about what your business actually needs.
           <br><br>
@@ -406,10 +436,11 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
     <div class="step reveal">
       <div class="step-num">
         <div class="step-bubble">02</div>
+        <div class="step-connector"></div>
       </div>
       <div class="step-body">
-        <div class="step-tag">Design & Architecture</div>
-        <div class="step-title">A Mockup Built <span>Precisely to Spec.</span></div>
+        <div class="step-tag">Design &amp; Architecture</div>
+        <h3 class="step-title">A Mockup Built <span>Precisely to Spec.</span></h3>
         <div class="step-text">
           If you arrive with an existing design, we build it to exact specification — pixel-perfect, no interpretation. If a bespoke design is required, we craft a custom visual identity tailored to your brand for an <strong>additional fee agreed upon in advance.</strong>
           <br><br>
@@ -424,10 +455,11 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
     <div class="step reveal">
       <div class="step-num">
         <div class="step-bubble">03</div>
+        <div class="step-connector"></div>
       </div>
       <div class="step-body">
-        <div class="step-tag">Development & Refinement</div>
-        <div class="step-title">Hand-Coded to the <span>Approved Mockup.</span></div>
+        <div class="step-tag">Development &amp; Refinement</div>
+        <h3 class="step-title">Hand-Coded to the <span>Approved Mockup.</span></h3>
         <div class="step-text">
           We write every line of code from scratch — no templates, no shortcuts, no borrowed themes. Your website is built precisely as approved.
           <br><br>
@@ -461,8 +493,8 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
         <div class="step-bubble">04</div>
       </div>
       <div class="step-body">
-        <div class="step-tag">Deployment & Support</div>
-        <div class="step-title">Final Approval. <span>Your Site Goes Live.</span></div>
+        <div class="step-tag">Deployment &amp; Support</div>
+        <h3 class="step-title">Final Approval. <span>Your Site Goes Live.</span></h3>
         <div class="step-text">
           Once final approvals are confirmed and the <strong>remaining 50% balance is settled</strong>, your custom website is deployed and live.
           <br><br>
@@ -479,45 +511,45 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 <!-- TERMS -->
 <section class="section terms-section" id="terms">
   <div class="s-label">Project Terms</div>
-  <h2 class="s-title">Scope of Work & <span>Working Terms</span></h2>
-  <div class="s-rule"></div>
+  <h2 class="s-title">Scope of Work &amp; <span>Working Terms</span></h2>
+  <div class="s-rule" aria-hidden="true"></div>
   <p class="s-sub">Reviewed and agreed upon before every engagement. Clarity before code — always.</p>
-  <div class="terms-grid reveal">
+  <div class="terms-grid">
 
     <div class="term-card">
       <div class="term-icon">🎯</div>
-      <div class="term-title">Strict Scope</div>
-      <div class="term-text">Project pricing covers only the services <strong>explicitly listed in your approved proposal.</strong> Any features, pages, or services outside the agreed scope will be separately quoted and billed before work begins.</div>
+      <h3 class="term-title">Strict Scope</h3>
+      <p class="term-text">Project pricing covers only the services <strong>explicitly listed in your approved proposal.</strong> Any features, pages, or services outside the agreed scope will be separately quoted and billed before work begins.</p>
     </div>
 
     <div class="term-card">
       <div class="term-icon">📁</div>
-      <div class="term-title">Client-Provided Content</div>
-      <div class="term-text">We do not provide content creation, image sourcing, or image editing services. <strong>All text, descriptions, and media assets must be supplied by the client.</strong> We are not liable for the quality, accuracy, or copyright status of client-provided materials.</div>
+      <h3 class="term-title">Client-Provided Content</h3>
+      <p class="term-text">We do not provide content creation, image sourcing, or image editing services. <strong>All text, descriptions, and media assets must be supplied by the client.</strong> We are not liable for the quality, accuracy, or copyright status of client-provided materials.</p>
     </div>
 
     <div class="term-card">
       <div class="term-icon">💳</div>
-      <div class="term-title">Third-Party Expenses</div>
-      <div class="term-text">The client is directly responsible for purchasing and maintaining all third-party services — including but not limited to <strong>domains, hosting, SSL certificates, premium plugins, and payment gateway fees.</strong></div>
+      <h3 class="term-title">Third-Party Expenses</h3>
+      <p class="term-text">The client is directly responsible for purchasing and maintaining all third-party services — including but not limited to <strong>domains, hosting, SSL certificates, premium plugins, and payment gateway fees.</strong></p>
     </div>
 
     <div class="term-card">
       <div class="term-icon">🔌</div>
-      <div class="term-title">Payment Gateway Approvals</div>
-      <div class="term-text">Technical integration of a payment gateway (e.g., Razorpay, Stripe) can be scoped and built. However, <strong>obtaining the legal, business, or operational approval</strong> from the payment provider is strictly the client's responsibility.</div>
+      <h3 class="term-title">Payment Gateway Approvals</h3>
+      <p class="term-text">Technical integration of a payment gateway (e.g., Razorpay, Stripe) can be scoped and built. However, <strong>obtaining the legal, business, or operational approval</strong> from the payment provider is strictly the client's responsibility.</p>
     </div>
 
     <div class="term-card">
       <div class="term-icon">⏱️</div>
-      <div class="term-title">Timeline Responsibility</div>
-      <div class="term-text">Our <strong>5 working day delivery window begins only when all required assets are received.</strong> Delayed content submission directly delays delivery. We commit to our timelines — we ask clients to commit to theirs.</div>
+      <h3 class="term-title">Timeline Responsibility</h3>
+      <p class="term-text">Our <strong>5 working day delivery window begins only when all required assets are received.</strong> Delayed content submission directly delays delivery. We commit to our timelines — we ask clients to commit to theirs.</p>
     </div>
 
     <div class="term-card">
       <div class="term-icon">📋</div>
-      <div class="term-title">No Implicit Services</div>
-      <div class="term-text">No service, feature, or deliverable shall be assumed or implied. <strong>Everything delivered is explicitly scoped in writing.</strong> This protects both parties and ensures there are no surprises at any stage of the project.</div>
+      <h3 class="term-title">No Implicit Services</h3>
+      <p class="term-text">No service, feature, or deliverable shall be assumed or implied. <strong>Everything delivered is explicitly scoped in writing.</strong> This protects both parties and ensures there are no surprises at any stage of the project.</p>
     </div>
 
   </div>
@@ -527,15 +559,15 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 <section class="section revisions-section" id="revisions">
   <div class="s-label">Revision Policy</div>
   <h2 class="s-title">What Counts as a Revision — <span>and What Doesn't</span></h2>
-  <div class="s-rule"></div>
+  <div class="s-rule" aria-hidden="true"></div>
   <p class="s-sub">This distinction protects your timeline and ensures the scope of your project remains financially predictable.</p>
   <div class="rev-grid reveal">
 
     <div class="rev-card yes">
       <div class="rev-header">
-        <span class="rev-badge yes">✓ Included as Revision</span>
+        <span class="rev-badge yes">&#10003; Included as Revision</span>
       </div>
-      <div class="rev-card-title" style="margin-bottom:1rem; font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:700; color:var(--white);">Minor Refinements</div>
+      <div class="rev-card-title">Minor Refinements</div>
       <ul class="rev-list">
         <li>Simple text or copy adjustments</li>
         <li>Small visual tweaks (colours, spacing, font size)</li>
@@ -547,9 +579,9 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 
     <div class="rev-card no">
       <div class="rev-header">
-        <span class="rev-badge no">✗ Billed as New Scope</span>
+        <span class="rev-badge no">&#10007; Billed as New Scope</span>
       </div>
-      <div class="rev-card-title" style="margin-bottom:1rem; font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:700; color:var(--white);">Structural Changes</div>
+      <div class="rev-card-title">Structural Changes</div>
       <ul class="rev-list">
         <li>Layout restructuring or navigation redesign</li>
         <li>Adding new pages, sections, or components</li>
@@ -565,9 +597,9 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 <!-- CLOSING CTA -->
 <section class="cta-section">
   <div class="cta-inner">
-    <div class="cta-quote-mark">"</div>
+    <div class="cta-quote-mark" aria-hidden="true">"</div>
     <p class="cta-quote">Clarity before code.<br><span>That's how we protect your time — and ours.</span></p>
-    <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20start%20a%20project%20with%20Easy%20Web%20Presence" target="_blank" class="btn-gold">
+    <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20start%20a%20project%20with%20Easy%20Web%20Presence" target="_blank" rel="noopener" class="btn-gold">
       📱 Start Your Project on WhatsApp
     </a>
   </div>
@@ -592,7 +624,6 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
     <div class="footer-col">
       <div class="footer-col-title">Legal</div>
       <ul>
-        
         <li><a href="/terms/">Terms &amp; Conditions</a></li>
         <li><a href="/privacy/">Privacy Policy</a></li>
         <li><a href="/Refund/">Refund Policy</a></li>
@@ -602,14 +633,14 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
       <div class="footer-col-title">Support</div>
       <ul>
         <li><a href="/#faq">FAQ</a></li>
-        <li><a href="https://wa.me/916388175966" target="_blank">WhatsApp Support</a></li>
+        <li><a href="https://wa.me/916388175966" target="_blank" rel="noopener">WhatsApp Support</a></li>
         <li><a href="mailto:contact@easywebpresence.co.in">Email Support</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">&copy; 2026 Easy Web Presence. All rights reserved.</div>
-    <div class="footer-owner">This website belongs to <a href="https://www.linkedin.com/in/sudarshan-mishra/" style="color:whitesmoke;" target="_blank" >Sudarshan Mishra </a> </div>
+    <div class="footer-owner">This website belongs to <a href="https://www.linkedin.com/in/sudarshan-mishra/" style="color:whitesmoke;" target="_blank" rel="noopener">Sudarshan Mishra</a></div>
   </div>
 </footer>
 
@@ -627,20 +658,33 @@ document.querySelectorAll('.term-card').forEach((c, i) => {
   obs.observe(c);
 });
 
-/* Hamburger */
+/* Hamburger Menu */
 const hamburgerBtn   = document.getElementById('hamburgerBtn');
 const mobileMenu     = document.getElementById('mobileMenu');
 const mobileClose    = document.getElementById('mobileClose');
 const mobileBackdrop = document.getElementById('mobileBackdrop');
 
-function openMenu() { mobileMenu.classList.add('open'); hamburgerBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeMenu() { mobileMenu.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow = ''; }
+function openMenu() {
+  mobileMenu.classList.add('open');
+  hamburgerBtn.classList.add('open');
+  hamburgerBtn.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  mobileMenu.classList.remove('open');
+  hamburgerBtn.classList.remove('open');
+  hamburgerBtn.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
 
 hamburgerBtn.addEventListener('click', openMenu);
 mobileClose.addEventListener('click', closeMenu);
 mobileBackdrop.addEventListener('click', closeMenu);
-document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+});
 </script>
+
 </body>
 </html>
