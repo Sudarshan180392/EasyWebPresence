@@ -157,15 +157,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
 
 /* TOPICS */
 .topics-section { background: var(--navy); }
-.topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1px; background: var(--border); margin-top: 3.5rem; }
-.topic-card { background: var(--navy); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: background .25s; }
-.topic-card:hover { background: rgba(201,149,74,.05); }
-.topic-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
-.topic-card:hover::before { transform: scaleX(1); }
-.topic-icon { font-size: 1.8rem; margin-bottom: .85rem; }
-.topic-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold-pale); margin-bottom: .35rem; }
-.topic-count { font-size: .78rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
-.topic-badge { display: inline-block; margin-top: .75rem; font-size: .67rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .25rem .7rem; background: rgba(201,149,74,.1); border: 1px solid var(--border); color: var(--gold); }
 
 /* NEWSLETTER */
 .newsletter-section { background: var(--navy-mid); padding: 6rem 7vw; position: relative; overflow: hidden; }
@@ -181,8 +172,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
 .nl-input:focus { background: rgba(201,149,74,.08); }
 .nl-btn { background: var(--gold); color: var(--navy); border: none; padding: .85rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: all .25s; white-space: nowrap; flex-shrink: 0; }
 .nl-btn:hover { background: var(--gold-light); }
-.nl-btn:disabled { cursor: not-allowed; }
+.nl-btn:disabled { cursor: not-allowed; opacity: .7; }
 .nl-note { font-size: .72rem; color: var(--muted); margin-top: .9rem; }
+
+/* CONTRIBUTE STRIP */
+.contribute-strip { background: var(--navy); padding: 3rem 7vw; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.contribute-strip p { font-size: .95rem; font-weight: 300; color: var(--muted); line-height: 1.8; text-align: center; max-width: 700px; margin: 0 auto; }
+.contribute-strip strong { color: var(--gold-pale); font-weight: 600; }
 
 /* CLOSING */
 .quote-section { background: var(--navy-mid); padding: 7rem 7vw; text-align: center; position: relative; overflow: hidden; }
@@ -212,7 +208,6 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.75); } }
-.fade-in { animation: fadeUp .7s ease both; }
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
@@ -290,7 +285,7 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
     <h1>Insights.<br><em>Ideas.</em></h1>
     <div class="hero-rule" aria-hidden="true"></div>
     <p class="blog-hero-sub">
-      Real talk on web design, SEO, performance, and why your website might be quietly costing you business. Sometimes we also talk on AI. 
+      Real talk on web design, SEO, performance, and why your website might be quietly costing you business. Sometimes we also talk on AI.
       <strong>Written from the experience — not copy paste.</strong>
     </p>
   </div>
@@ -301,7 +296,6 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   <div class="s-label">Coming Soon</div>
   <h2 class="s-title">Articles Worth <span>Your Time</span></h2>
   <div class="s-rule" aria-hidden="true"></div>
-
   <div class="featured-coming">
     <div class="featured-left">
       <div>
@@ -323,13 +317,13 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
       </div>
       <div class="mini-article">
         <div class="mini-cat">Web Design</div>
-        <div class="mini-title">One-Time Fee vs Monthly Subscription: A Cost Breakdown </div>
+        <div class="mini-title">One-Time Fee vs Monthly Subscription: A Cost Breakdown</div>
         <div class="mini-desc">The math most agencies don't want you to do. We'll do it for you — transparently.</div>
         <div class="mini-status">In the works</div>
       </div>
       <div class="mini-article">
         <div class="mini-cat">Performance</div>
-        <div class="mini-title">Your Site Loads in < 3 Seconds. Here's What That's Costing You.</div>
+        <div class="mini-title">Your Site Loads in &lt;3 Seconds. Here's What That's Costing You.</div>
         <div class="mini-desc">Every extra second of load time is lost revenue. This piece quantifies it with real data.</div>
         <div class="mini-status">In the works</div>
       </div>
@@ -337,54 +331,16 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   </div>
 </section>
 
-<!-- TOPICS -->
+<!-- TOPICS (commented out as per your version) -->
 <section class="section topics-section" id="topics">
   <div class="s-label">What We Write About</div>
   <h2 class="s-title">Topics That <span>Actually Matter</span></h2>
   <div class="s-rule" aria-hidden="true"></div>
   <p class="s-sub">No listicles. No filler. Every article answers a real question a business owner or developer has faced.</p>
-  <!-- <div class="topics-grid">
-    <div class="topic-card">
-      <div class="topic-icon">&#128269;</div>
-      <div class="topic-name">SEO &amp; Visibility</div>
-      <div class="topic-count">How search engines read your site — and how to make sure they like what they see.</div>
-      <div class="topic-badge">Coming Soon</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-icon">&#9889;</div>
-      <div class="topic-name">Performance &amp; Speed</div>
-      <div class="topic-count">Why your website's speed directly affects your business — and how to fix it.</div>
-      <div class="topic-badge">Coming Soon</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-icon">&#128176;</div>
-      <div class="topic-name">Website Economics</div>
-      <div class="topic-count">The real cost of templates, subscriptions, and builders most people don't calculate.</div>
-      <div class="topic-badge">Coming Soon</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-icon">&#128736;</div>
-      <div class="topic-name">Custom vs No-Code</div>
-      <div class="topic-count">Honest comparisons. When each approach makes sense — and when it doesn't.</div>
-      <div class="topic-badge">Coming Soon</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-icon">&#128241;</div>
-      <div class="topic-name">Mobile-First Design</div>
-      <div class="topic-count">Over 70% of Indian web traffic is mobile. Is your site actually built for that?</div>
-      <div class="topic-badge">Coming Soon</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-icon">&#128274;</div>
-      <div class="topic-name">Security &amp; Stability</div>
-      <div class="topic-count">Why static HTML sites are structurally safer — and what that means for your business.</div>
-      <div class="topic-badge">Coming Soon</div>
-    </div>
-  </div> -->
 </section>
 
 <!-- NEWSLETTER -->
-<br class="newsletter-section" id="notify">
+<section class="newsletter-section" id="notify">
   <div class="newsletter-inner">
     <div class="s-label">Stay in the Loop</div>
     <h2 class="s-title">Get Notified When <span>We Publish</span></h2>
@@ -400,18 +356,13 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   </div>
 </section>
 
-<br>
-<br>
-
-<section style="padding:20px 0;">
-    <div style="max-width:900px;margin:auto;text-align:center;">
-    <p class="nl-sub" style="line-height:1.8; ">
-      Passionate about writing for tech & need an exciting platform?  
-      Just  <strong>  send us your article with full name & details on our email</strong> we will publish it here with your name & photo. 
-    </p>
-
+<!-- CONTRIBUTE STRIP -->
+<div class="contribute-strip">
+  <p>
+    Passionate about writing for tech &amp; need an exciting platform?
+    Just <strong>send us your article with full name &amp; details on our email</strong> — we will publish it here with your name &amp; photo.
+  </p>
 </div>
-  </section>
 
 <!-- CLOSING -->
 <section class="quote-section">
@@ -466,7 +417,7 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 </footer>
 
 <script>
-/* Scroll reveal — safe fallback so nothing stays hidden */
+/* Scroll reveal */
 function initReveal() {
   var elements = document.querySelectorAll('.fade-in');
   if (!('IntersectionObserver' in window)) {
@@ -486,26 +437,16 @@ function initReveal() {
   });
 }
 
-/* Stagger topic cards */
-document.querySelectorAll('.topic-card').forEach(function(c, i) {
-  c.style.transitionDelay = (i * 0.08) + 's';
-  c.classList.add('fade-in');
-});
-
-/* Stagger mini articles */
 document.querySelectorAll('.mini-article').forEach(function(c, i) {
   c.style.transitionDelay = (i * 0.1) + 's';
   c.classList.add('fade-in');
 });
-
-/* Add fade-in to other sections */
 document.querySelectorAll('.featured-coming, .newsletter-inner').forEach(function(el) {
   el.classList.add('fade-in');
 });
-
 initReveal();
 
-/* Newsletter — Brevo Integration */
+/* Newsletter — Vercel serverless function */
 async function handleSubscribe(e) {
   e.preventDefault();
   var btn   = e.target.querySelector('.nl-btn');
@@ -516,46 +457,29 @@ async function handleSubscribe(e) {
   btn.textContent = 'Adding you...';
   btn.disabled = true;
 
-  var BREVO_API_KEY = 'xkeysib-6d0f03a29b5cbc085afa987583b59ed8d663d678b918c37e1f163e1942aab83e-hFtaZXgQFypyolA';
-  var LIST_ID = 2;
-
   try {
-    var contactRes = await fetch('https://api.brevo.com/v3/contacts', {
+    var apiRes = await fetch('/api/subscribe', {
       method: 'POST',
-      headers: { 'accept': 'application/json', 'content-type': 'application/json', 'api-key': BREVO_API_KEY },
-      body: JSON.stringify({ email: email, listIds: [LIST_ID], updateEnabled: true })
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email: email })
     });
+    var data = await apiRes.json();
+    if (!apiRes.ok) throw new Error(data.error || 'Something went wrong');
 
-    if (!contactRes.ok && contactRes.status !== 204) {
-      var err = await contactRes.json();
-      throw new Error(err.message || 'Failed to add contact');
-    }
-
-    await fetch('https://api.brevo.com/v3/smtp/email', {
-      method: 'POST',
-      headers: { 'accept': 'application/json', 'content-type': 'application/json', 'api-key': BREVO_API_KEY },
-      body: JSON.stringify({
-        sender: { name: 'Sudarshan — Easy Web Presence', email: 'contact@easywebpresence.co.in' },
-        to: [{ email: email }],
-        subject: "You're in. Good things are coming.",
-        htmlContent: '<div style="background:#0b1526;padding:48px 40px;font-family:Georgia,serif;max-width:560px;margin:0 auto;"><div style="border-bottom:1px solid rgba(201,149,74,.3);padding-bottom:24px;margin-bottom:32px;"><span style="font-size:1.3rem;font-weight:700;color:#e2b87a;">Easy <span style="color:#f4f0ea;font-weight:400;">Web Presence</span></span></div><p style="color:#f4f0ea;font-size:1.1rem;line-height:1.8;margin:0 0 20px;">Hey,</p><p style="color:#f4f0ea;font-size:1.05rem;line-height:1.8;margin:0 0 20px;font-style:italic;">Most people scroll past. You didn\'t.</p><p style="color:rgba(244,240,234,.75);font-size:.95rem;line-height:1.9;margin:0 0 20px;font-weight:300;">You\'ve just joined a small, quiet list of people who care about having a web presence that actually works — not just something that looks like a website.</p><p style="color:rgba(244,240,234,.75);font-size:.95rem;line-height:1.9;margin:0 0 28px;font-weight:300;">Here\'s what you can expect from us: <strong style="color:#e2b87a;">no weekly newsletters.</strong> Just a single email when we publish something worth reading — practical, honest, and written from real experience. Topics we cover: tech, business, websites, and AI — the stuff that actually affects how you show up online.</p><p style="color:rgba(244,240,234,.75);font-size:.95rem;line-height:1.8;font-weight:300;margin:0 0 40px;">We\'re glad you\'re here.</p><div style="border-top:1px solid rgba(201,149,74,.3);padding-top:24px;"><p style="color:#e2b87a;font-size:.9rem;margin:0;">— Sudarshan</p><p style="color:rgba(244,240,234,.5);font-size:.8rem;margin:4px 0 0;font-style:italic;">Founder, Easy Web Presence · Creating custom-coded, fast-loading websites for people who mean business.</p></div></div>'
-      })
-    });
-
-    btn.textContent = 'You\'re on the list!';
+    btn.textContent = "You're on the list!";
     btn.style.background = 'rgba(201,149,74,.15)';
     btn.style.color = '#e2b87a';
     btn.style.border = '1px solid #c9954a';
     input.value = '';
     input.placeholder = 'Check your inbox!';
-    note.textContent = 'Welcome email sent. We\'ll be in touch when we publish.';
+    note.textContent = "Welcome email sent. We'll be in touch when we publish.";
 
   } catch (err) {
     btn.textContent = 'Try Again';
     btn.disabled = false;
     note.textContent = 'Something went wrong. Please try again or email us directly.';
     note.style.color = '#e07070';
-    console.error('Brevo error:', err);
+    console.error('Subscribe error:', err);
   }
 }
 
