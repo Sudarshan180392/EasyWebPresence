@@ -343,6 +343,11 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 
+<!-- Ad Sense -->
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3924056609171441"
+     crossorigin="anonymous"></script>
+
+
 </head>
 <body>
 
@@ -692,6 +697,15 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
 });
 </script>
+ <!-- Disabling Right click -->
+
+ <script>
+document.addEventListener("contextmenu", function(event) {
+  event.preventDefault();
+});
+</script>
+
+
 
 </body>
 </html>

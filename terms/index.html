@@ -150,7 +150,9 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 
-
+<!-- Ad Sense -->
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3924056609171441"
+     crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -469,5 +471,13 @@ mobileBackdrop.addEventListener('click', closeMenu);
 document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 </script>
+
+<!-- Disable RC -->
+ <script>
+document.addEventListener("contextmenu", function(event) {
+  event.preventDefault();
+});
+</script>
+
 </body>
 </html>
