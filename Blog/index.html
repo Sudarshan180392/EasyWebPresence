@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog | Web Design & Development Insights – Easy Web Presence</title>
+<meta name="description" content="Practical insights on web design, SEO, performance, and building digital assets that last. Written by Sudarshan Mishra, founder of Easy Web Presence."/>
+<link rel="canonical" href="https://www.easywebpresence.co.in/Blog/"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Sudarshan Mishra – Easy Web Presence"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Blog | Web Design & Development Insights – Easy Web Presence"/>
+<meta property="og:description" content="Practical insights on web design, SEO, performance, and building digital assets that last."/>
+<meta property="og:url" content="https://www.easywebpresence.co.in/Blog/"/>
+<meta property="og:image" content="https://www.easywebpresence.co.in/Logo.jpg"/>
+<meta property="og:site_name" content="Easy Web Presence"/>
+<meta property="og:locale" content="en_IN"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Blog | Easy Web Presence"/>
+<meta name="twitter:description" content="Practical web design & SEO insights from India's custom website development studio."/>
+<meta name="twitter:image" content="https://www.easywebpresence.co.in/Logo.jpg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://www.easywebpresence.co.in/Blog/",
+      "url": "https://www.easywebpresence.co.in/Blog/",
+      "name": "Easy Web Presence Blog",
+      "description": "Insights on web design, SEO, and building digital assets that last.",
+      "inLanguage": "en-IN",
+      "publisher": { "@id": "https://www.easywebpresence.co.in/#business" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.easywebpresence.co.in/Blog/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.easywebpresence.co.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.easywebpresence.co.in/Blog/" }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3924056609171441" crossorigin="anonymous"></script>
+<style>
+:root {
+  --navy: #0b1526;
+  --navy-mid: #112040;
+  --navy-light: #1a2f58;
+  --gold: #c9954a;
+  --gold-light: #e2b87a;
+  --gold-pale: #f0d9b5;
+  --white: #f4f0ea;
+  --muted: rgba(244,240,234,.5);
+  --border: rgba(201,149,74,.22);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1rem 5vw; background: rgba(11,21,38,.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nav-logo { display: flex; align-items: flex-end; gap: 10px; text-decoration: none; }
+.nav-logo img { height: 44px; width: auto; }
+.nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold-light); }
+.nav-logo-text span { color: var(--white); font-weight: 400; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: .8rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .25s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+.nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold-light); padding: .55rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: all .25s; }
+.nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+/* HAMBURGER */
+.hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 40px; height: 40px; background: transparent; border: 1px solid var(--border); cursor: pointer; padding: 8px; z-index: 301; transition: border-color .25s; }
+.hamburger:hover { border-color: var(--gold); }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--gold-light); border-radius: 2px; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .25s, width .3s; transform-origin: center; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* MOBILE DRAWER */
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 299; pointer-events: none; }
+.mobile-menu.open { pointer-events: all; }
+.mobile-backdrop { position: absolute; inset: 0; background: rgba(6,10,20,.75); backdrop-filter: blur(4px); opacity: 0; transition: opacity .35s ease; }
+.mobile-menu.open .mobile-backdrop { opacity: 1; }
+.mobile-panel { position: absolute; top: 0; right: 0; width: min(320px, 85vw); height: 100%; background: #0b1a30; border-left: 1px solid var(--border); transform: translateX(100%); transition: transform .38s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; overflow-y: auto; }
+.mobile-menu.open .mobile-panel { transform: translateX(0); }
+.mobile-panel-header { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border); }
+.mobile-panel-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold-light); }
+.mobile-panel-logo span { color: var(--white); font-weight: 400; }
+.mobile-close { background: transparent; border: 1px solid var(--border); color: var(--gold); font-size: 1.2rem; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .2s; }
+.mobile-close:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.mobile-nav-links { list-style: none; padding: 1.5rem 0; flex: 1; }
+.mobile-nav-links li { border-bottom: 1px solid rgba(201,149,74,.1); }
+.mobile-nav-links a { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .9rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s, background .2s, padding-left .2s; }
+.mobile-nav-links a:hover { color: var(--gold-light); background: rgba(201,149,74,.06); padding-left: 2rem; }
+.mobile-nav-links a .m-icon { font-size: 1.1rem; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: rgba(201,149,74,.08); border: 1px solid var(--border); }
+.mobile-panel-cta { padding: 1.5rem; border-top: 1px solid var(--border); }
+.mobile-panel-cta a { display: block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); text-align: center; padding: .9rem; font-family: 'Jost', sans-serif; font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+.mobile-panel-note { font-size: .72rem; color: var(--muted); text-align: center; margin-top: .75rem; }
+
+/* HERO */
+.blog-hero { min-height: 55vh; display: flex; flex-direction: column; justify-content: center; padding: 10rem 7vw 5rem; position: relative; overflow: hidden; background: var(--navy); }
+.blog-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(201,149,74,.08) 0%, transparent 55%), radial-gradient(ellipse at 10% 90%, rgba(17,32,64,.9) 0%, transparent 60%); pointer-events: none; }
+.blog-hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,149,74,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,149,74,.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+.hero-inner { position: relative; z-index: 1; max-width: 820px; }
+.breadcrumb { display: flex; align-items: center; gap: .5rem; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.75rem; animation: fadeUp .5s ease both; }
+.breadcrumb a { color: var(--gold); text-decoration: none; }
+.blog-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 700; line-height: .95; color: var(--white); letter-spacing: -.01em; animation: fadeUp .7s .1s ease both; }
+.blog-hero h1 em { font-style: italic; color: var(--gold-light); display: block; }
+.hero-rule { width: 60px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin: 1.75rem 0; animation: fadeUp .7s .2s ease both; }
+.blog-hero-sub { font-size: 1.05rem; line-height: 1.8; font-weight: 300; color: var(--muted); max-width: 560px; animation: fadeUp .7s .25s ease both; }
+.blog-hero-sub strong { color: var(--gold-light); font-weight: 600; }
+
+/* SECTIONS */
+.section { padding: 6rem 7vw; }
+.s-label { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
+.s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; color: var(--white); }
+.s-title span { color: var(--gold-light); font-style: italic; }
+.s-rule { width: 50px; height: 1px; background: var(--gold); margin: 1.25rem 0; opacity: .6; }
+.s-sub { font-size: .95rem; font-weight: 300; color: var(--muted); max-width: 560px; line-height: 1.8; }
+
+/* ARTICLES SECTION */
+.coming-soon-section { background: var(--navy-mid); }
+.featured-coming { margin-top: 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); overflow: hidden; }
+.featured-left { background: rgba(201,149,74,.04); padding: 3.5rem 3rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.featured-left::before { content: '✦'; position: absolute; bottom: -1rem; right: 1.5rem; font-size: 9rem; color: rgba(201,149,74,.05); font-family: 'Cormorant Garamond', serif; line-height: 1; pointer-events: none; }
+.featured-tag { display: inline-flex; align-items: center; gap: .5rem; background: rgba(201,149,74,.12); border: 1px solid var(--border); padding: .3rem .85rem; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; width: fit-content; }
+.featured-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 1.25rem; }
+.featured-left h2 em { color: var(--gold-light); font-style: italic; }
+.featured-left p { font-size: .92rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 2rem; }
+.coming-pill { display: inline-flex; align-items: center; gap: .6rem; border: 1px solid var(--gold); padding: .55rem 1.25rem; font-size: .78rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-light); width: fit-content; }
+.coming-pill .dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; animation: pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
+.featured-right { display: flex; flex-direction: column; }
+.mini-article { background: var(--navy-mid); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: .5rem; position: relative; overflow: hidden; transition: background .25s; flex: 1; border-bottom: 1px solid var(--border); }
+.mini-article:last-child { border-bottom: none; }
+.mini-article:hover { background: rgba(201,149,74,.06); }
+.mini-article::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--gold); transform: scaleY(0); transform-origin: top; transition: transform .3s; }
+.mini-article:hover::before { transform: scaleY(1); }
+.mini-cat { font-size: .68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.mini-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; color: var(--gold-pale); line-height: 1.3; }
+.mini-desc { font-size: .8rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+.mini-status { font-size: .7rem; color: rgba(201,149,74,.6); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; margin-top: .25rem; }
+
+/* TOPICS */
+.topics-section { background: var(--navy); }
+.topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1px; background: var(--border); margin-top: 3.5rem; }
+.topic-card { background: var(--navy); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: background .25s; }
+.topic-card:hover { background: rgba(201,149,74,.05); }
+.topic-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+.topic-card:hover::before { transform: scaleX(1); }
+.topic-icon { font-size: 1.8rem; margin-bottom: .85rem; }
+.topic-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold-pale); margin-bottom: .35rem; }
+.topic-count { font-size: .78rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+.topic-badge { display: inline-block; margin-top: .75rem; font-size: .67rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: .25rem .7rem; background: rgba(201,149,74,.1); border: 1px solid var(--border); color: var(--gold); }
+
+/* NEWSLETTER */
+.newsletter-section { background: var(--navy-mid); padding: 6rem 7vw; position: relative; overflow: hidden; }
+.newsletter-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(201,149,74,.09) 0%, transparent 60%); pointer-events: none; }
+.newsletter-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; text-align: center; }
+.newsletter-inner .s-label { display: block; }
+.newsletter-inner .s-rule { margin: 1.25rem auto; }
+.nl-sub { font-size: .95rem; font-weight: 300; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; }
+.nl-sub strong { color: var(--gold-pale); font-weight: 600; }
+.nl-form { display: flex; max-width: 480px; margin: 0 auto; border: 1px solid var(--border); }
+.nl-input { flex: 1; background: rgba(201,149,74,.04); border: none; padding: .85rem 1.25rem; font-family: 'Jost', sans-serif; font-size: .875rem; color: var(--white); font-weight: 300; outline: none; min-width: 0; }
+.nl-input::placeholder { color: var(--muted); }
+.nl-input:focus { background: rgba(201,149,74,.08); }
+.nl-btn { background: var(--gold); color: var(--navy); border: none; padding: .85rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: all .25s; white-space: nowrap; flex-shrink: 0; }
+.nl-btn:hover { background: var(--gold-light); }
+.nl-btn:disabled { cursor: not-allowed; }
+.nl-note { font-size: .72rem; color: var(--muted); margin-top: .9rem; }
+
+/* CLOSING */
+.quote-section { background: var(--navy-mid); padding: 7rem 7vw; text-align: center; position: relative; overflow: hidden; }
+.quote-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(201,149,74,.1) 0%, transparent 65%); pointer-events: none; }
+.quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 6rem; color: rgba(201,149,74,.15); line-height: .5; margin-bottom: 1rem; position: relative; z-index: 1; }
+.quote-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3.5vw, 2.8rem); font-weight: 600; font-style: italic; color: var(--white); max-width: 720px; margin: 0 auto; line-height: 1.3; position: relative; z-index: 1; }
+.quote-text span { color: var(--gold-light); }
+.quote-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; position: relative; z-index: 1; }
+.btn-gold { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--navy); border: none; padding: .85rem 2.2rem; font-family: 'Jost', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: all .25s; box-shadow: 0 4px 20px rgba(201,149,74,.3); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,149,74,.45); }
+.btn-outline { background: transparent; color: var(--gold-light); border: 1px solid var(--border); padding: .85rem 2.2rem; font-family: 'Jost', sans-serif; font-weight: 500; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: all .25s; }
+.btn-outline:hover { border-color: var(--gold-light); color: var(--white); transform: translateY(-2px); }
+
+/* FOOTER */
+footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem 7vw 2rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+.footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); margin-bottom: .75rem; }
+.footer-brand-desc { font-size: .875rem; color: var(--muted); line-height: 1.75; font-weight: 300; max-width: 280px; }
+.footer-col-title { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+.footer-col ul a { font-size: .85rem; color: var(--muted); text-decoration: none; font-weight: 300; transition: color .2s; }
+.footer-col ul a:hover { color: var(--gold-light); }
+.footer-bottom { padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { font-size: .78rem; color: rgba(244,240,234,.3); }
+.footer-owner { font-size: .82rem; color: var(--muted); border: 1px solid var(--border); padding: .35rem .9rem; font-style: italic; font-family: 'Cormorant Garamond', serif; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.75); } }
+.fade-in { animation: fadeUp .7s ease both; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .featured-coming { grid-template-columns: 1fr; }
+  .featured-left { border-right: none; border-bottom: 1px solid var(--border); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; }
+}
+@media (max-width: 600px) {
+  .blog-hero h1 { font-size: 2.6rem; }
+  .section { padding: 4.5rem 5vw; }
+  .featured-left { padding: 2.25rem 1.5rem; }
+  .nl-form { flex-direction: column; border: none; gap: .75rem; }
+  .nl-input { border: 1px solid var(--border); }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/Logo.jpg" alt="Easy Web Presence logo" width="44" height="44"/>
+    <span class="nav-logo-text">Easy<span> Web Presence</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/About/">About Us</a></li>
+    <li><a href="/how-we-work/">How We Work</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/Blog/" class="active">Blog</a></li>
+  </ul>
+  <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" rel="noopener" class="nav-cta">Free Quote</a>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <div class="mobile-panel">
+    <div class="mobile-panel-header">
+      <div class="mobile-panel-logo">Easy<span> Web Presence</span></div>
+      <button class="mobile-close" id="mobileClose" aria-label="Close navigation menu">&#x2715;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/" class="mobile-link"><span class="m-icon">&#127968;</span> Home</a></li>
+      <li><a href="/About/" class="mobile-link"><span class="m-icon">&#128100;</span> About Us</a></li>
+      <li><a href="/#usp" class="mobile-link"><span class="m-icon">&#9889;</span> Services</a></li>
+      <li><a href="/#pricing" class="mobile-link"><span class="m-icon">&#8377;</span> Pricing</a></li>
+      <li><a href="/#faq" class="mobile-link"><span class="m-icon">&#10067;</span> FAQ</a></li>
+      <li><a href="/Blog/" class="mobile-link"><span class="m-icon">&#128221;</span> Blog</a></li>
+    </ul>
+    <div class="mobile-panel-cta">
+      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" rel="noopener">Get a Free Quote on WhatsApp</a>
+      <p class="mobile-panel-note">We reply within the hour · No pressure</p>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">›</span>
+      <span>Blog</span>
+    </nav>
+    <h1>Insights.<br><em>Ideas.</em></h1>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p class="blog-hero-sub">
+      Real talk on web design, SEO, performance, and why your website might be quietly costing you business. Sometimes we also talk on AI. 
+      <strong>Written from the experience — not copy paste.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="section coming-soon-section" id="articles">
+  <div class="s-label">Coming Soon</div>
+  <h2 class="s-title">Articles Worth <span>Your Time</span></h2>
+  <div class="s-rule" aria-hidden="true"></div>
+
+  <div class="featured-coming">
+    <div class="featured-left">
+      <div>
+        <div class="featured-tag">First Article</div>
+        <h2>Why WordPress is <em>Quietly Killing</em> Your Website's Performance</h2>
+        <p>You were sold "easy." But easy comes with 40 plugins, a database that can be hacked, and a site that loads in 6 seconds on mobile. This piece breaks down exactly what happens under the hood — and why clean HTML still wins.</p>
+      </div>
+      <div class="coming-pill">
+        <span class="dot"></span>
+        Publishing Soon
+      </div>
+    </div>
+    <div class="featured-right">
+      <div class="mini-article">
+        <div class="mini-cat">SEO</div>
+        <div class="mini-title">What Google Actually Looks for in a Small Business Website</div>
+        <div class="mini-desc">Forget keyword stuffing. Here's the technical and content checklist that actually moves the needle for local businesses.</div>
+        <div class="mini-status">In the works</div>
+      </div>
+      <div class="mini-article">
+        <div class="mini-cat">Web Design</div>
+        <div class="mini-title">One-Time Fee vs Monthly Subscription: A Cost Breakdown </div>
+        <div class="mini-desc">The math most agencies don't want you to do. We'll do it for you — transparently.</div>
+        <div class="mini-status">In the works</div>
+      </div>
+      <div class="mini-article">
+        <div class="mini-cat">Performance</div>
+        <div class="mini-title">Your Site Loads in < 3 Seconds. Here's What That's Costing You.</div>
+        <div class="mini-desc">Every extra second of load time is lost revenue. This piece quantifies it with real data.</div>
+        <div class="mini-status">In the works</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="section topics-section" id="topics">
+  <div class="s-label">What We Write About</div>
+  <h2 class="s-title">Topics That <span>Actually Matter</span></h2>
+  <div class="s-rule" aria-hidden="true"></div>
+  <p class="s-sub">No listicles. No filler. Every article answers a real question a business owner or developer has faced.</p>
+  <!-- <div class="topics-grid">
+    <div class="topic-card">
+      <div class="topic-icon">&#128269;</div>
+      <div class="topic-name">SEO &amp; Visibility</div>
+      <div class="topic-count">How search engines read your site — and how to make sure they like what they see.</div>
+      <div class="topic-badge">Coming Soon</div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon">&#9889;</div>
+      <div class="topic-name">Performance &amp; Speed</div>
+      <div class="topic-count">Why your website's speed directly affects your business — and how to fix it.</div>
+      <div class="topic-badge">Coming Soon</div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon">&#128176;</div>
+      <div class="topic-name">Website Economics</div>
+      <div class="topic-count">The real cost of templates, subscriptions, and builders most people don't calculate.</div>
+      <div class="topic-badge">Coming Soon</div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon">&#128736;</div>
+      <div class="topic-name">Custom vs No-Code</div>
+      <div class="topic-count">Honest comparisons. When each approach makes sense — and when it doesn't.</div>
+      <div class="topic-badge">Coming Soon</div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon">&#128241;</div>
+      <div class="topic-name">Mobile-First Design</div>
+      <div class="topic-count">Over 70% of Indian web traffic is mobile. Is your site actually built for that?</div>
+      <div class="topic-badge">Coming Soon</div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon">&#128274;</div>
+      <div class="topic-name">Security &amp; Stability</div>
+      <div class="topic-count">Why static HTML sites are structurally safer — and what that means for your business.</div>
+      <div class="topic-badge">Coming Soon</div>
+    </div>
+  </div> -->
+</section>
+
+<!-- NEWSLETTER -->
+<br class="newsletter-section" id="notify">
+  <div class="newsletter-inner">
+    <div class="s-label">Stay in the Loop</div>
+    <h2 class="s-title">Get Notified When <span>We Publish</span></h2>
+    <div class="s-rule"></div>
+    <p class="nl-sub">
+      No newsletters that feel like ads. Just <strong>one email when a new article drops</strong> — practical, actionable, worth reading.
+    </p>
+    <form class="nl-form" onsubmit="handleSubscribe(event)">
+      <input type="email" class="nl-input" placeholder="your@email.com" required aria-label="Email address"/>
+      <button type="submit" class="nl-btn">Notify Me</button>
+    </form>
+    <p class="nl-note" id="nl-note">No spam. Unsubscribe anytime. We hate cluttered inboxes too.</p>
+  </div>
+</section>
+
+<br>
+<br>
+
+<section style="padding:20px 0;">
+    <div style="max-width:900px;margin:auto;text-align:center;">
+    <p class="nl-sub" style="line-height:1.8; ">
+      Passionate about writing for tech & need an exciting platform?  
+      Just  <strong>  send us your article with full name & details on our email</strong> we will publish it here with your name & photo. 
+    </p>
+
+</div>
+  </section>
+
+<!-- CLOSING -->
+<section class="quote-section">
+  <div class="quote-mark" aria-hidden="true">"</div>
+  <p class="quote-text">
+    Good writing, like good code —<br>
+    <span>no bloat, no shortcuts, built to last.</span>
+  </p>
+  <div class="quote-cta">
+    <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" rel="noopener" class="btn-gold">Build Your Website</a>
+    <a href="/About/" class="btn-outline">About Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Easy Web Presence</div>
+      <p class="footer-brand-desc">Custom-coded HTML/CSS/JS websites for Professionals and businesses. Fast, secure, and owned by you forever.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <ul>
+        <li><a href="/About/">About Us</a></li>
+        <li><a href="/how-we-work/">How We Work</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/#clients">Who We Serve</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul>
+        <li><a href="/terms/">Terms &amp; Conditions</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/Refund/">Refund Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Support</div>
+      <ul>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="https://wa.me/916388175966" target="_blank" rel="noopener">WhatsApp Support</a></li>
+        <li><a href="mailto:contact@easywebpresence.co.in">Email Support</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Easy Web Presence. All rights reserved.</div>
+    <div class="footer-owner">Designed &amp; developed by Sudarshan Mishra</div>
+  </div>
+</footer>
+
+<script>
+/* Scroll reveal — safe fallback so nothing stays hidden */
+function initReveal() {
+  var elements = document.querySelectorAll('.fade-in');
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach(function(el) { el.style.opacity = '1'; el.style.transform = 'none'; });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.08 });
+  elements.forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(22px)';
+    el.style.transition = 'opacity .65s ease, transform .65s ease';
+    obs.observe(el);
+  });
+}
+
+/* Stagger topic cards */
+document.querySelectorAll('.topic-card').forEach(function(c, i) {
+  c.style.transitionDelay = (i * 0.08) + 's';
+  c.classList.add('fade-in');
+});
+
+/* Stagger mini articles */
+document.querySelectorAll('.mini-article').forEach(function(c, i) {
+  c.style.transitionDelay = (i * 0.1) + 's';
+  c.classList.add('fade-in');
+});
+
+/* Add fade-in to other sections */
+document.querySelectorAll('.featured-coming, .newsletter-inner').forEach(function(el) {
+  el.classList.add('fade-in');
+});
+
+initReveal();
+
+/* Newsletter — Brevo Integration */
+async function handleSubscribe(e) {
+  e.preventDefault();
+  var btn   = e.target.querySelector('.nl-btn');
+  var input = e.target.querySelector('.nl-input');
+  var email = input.value.trim();
+  var note  = document.getElementById('nl-note');
+
+  btn.textContent = 'Adding you...';
+  btn.disabled = true;
+
+  var BREVO_API_KEY = 'xkeysib-6d0f03a29b5cbc085afa987583b59ed8d663d678b918c37e1f163e1942aab83e-hFtaZXgQFypyolA';
+  var LIST_ID = 2;
+
+  try {
+    var contactRes = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: { 'accept': 'application/json', 'content-type': 'application/json', 'api-key': BREVO_API_KEY },
+      body: JSON.stringify({ email: email, listIds: [LIST_ID], updateEnabled: true })
+    });
+
+    if (!contactRes.ok && contactRes.status !== 204) {
+      var err = await contactRes.json();
+      throw new Error(err.message || 'Failed to add contact');
+    }
+
+    await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: { 'accept': 'application/json', 'content-type': 'application/json', 'api-key': BREVO_API_KEY },
+      body: JSON.stringify({
+        sender: { name: 'Sudarshan — Easy Web Presence', email: 'contact@easywebpresence.co.in' },
+        to: [{ email: email }],
+        subject: "You're in. Good things are coming.",
+        htmlContent: '<div style="background:#0b1526;padding:48px 40px;font-family:Georgia,serif;max-width:560px;margin:0 auto;"><div style="border-bottom:1px solid rgba(201,149,74,.3);padding-bottom:24px;margin-bottom:32px;"><span style="font-size:1.3rem;font-weight:700;color:#e2b87a;">Easy <span style="color:#f4f0ea;font-weight:400;">Web Presence</span></span></div><p style="color:#f4f0ea;font-size:1.1rem;line-height:1.8;margin:0 0 20px;">Hey,</p><p style="color:#f4f0ea;font-size:1.05rem;line-height:1.8;margin:0 0 20px;font-style:italic;">Most people scroll past. You didn\'t.</p><p style="color:rgba(244,240,234,.75);font-size:.95rem;line-height:1.9;margin:0 0 20px;font-weight:300;">You\'ve just joined a small, quiet list of people who care about having a web presence that actually works — not just something that looks like a website.</p><p style="color:rgba(244,240,234,.75);font-size:.95rem;line-height:1.9;margin:0 0 28px;font-weight:300;">Here\'s what you can expect from us: <strong style="color:#e2b87a;">no weekly newsletters.</strong> Just a single email when we publish something worth reading — practical, honest, and written from real experience. Topics we cover: tech, business, websites, and AI — the stuff that actually affects how you show up online.</p><p style="color:rgba(244,240,234,.75);font-size:.95rem;line-height:1.8;font-weight:300;margin:0 0 40px;">We\'re glad you\'re here.</p><div style="border-top:1px solid rgba(201,149,74,.3);padding-top:24px;"><p style="color:#e2b87a;font-size:.9rem;margin:0;">— Sudarshan</p><p style="color:rgba(244,240,234,.5);font-size:.8rem;margin:4px 0 0;font-style:italic;">Founder, Easy Web Presence · Creating custom-coded, fast-loading websites for people who mean business.</p></div></div>'
+      })
+    });
+
+    btn.textContent = 'You\'re on the list!';
+    btn.style.background = 'rgba(201,149,74,.15)';
+    btn.style.color = '#e2b87a';
+    btn.style.border = '1px solid #c9954a';
+    input.value = '';
+    input.placeholder = 'Check your inbox!';
+    note.textContent = 'Welcome email sent. We\'ll be in touch when we publish.';
+
+  } catch (err) {
+    btn.textContent = 'Try Again';
+    btn.disabled = false;
+    note.textContent = 'Something went wrong. Please try again or email us directly.';
+    note.style.color = '#e07070';
+    console.error('Brevo error:', err);
+  }
+}
+
+/* Hamburger */
+var hamburgerBtn   = document.getElementById('hamburgerBtn');
+var mobileMenu     = document.getElementById('mobileMenu');
+var mobileClose    = document.getElementById('mobileClose');
+var mobileBackdrop = document.getElementById('mobileBackdrop');
+
+function openMenu() { mobileMenu.classList.add('open'); hamburgerBtn.classList.add('open'); hamburgerBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+function closeMenu() { mobileMenu.classList.remove('open'); hamburgerBtn.classList.remove('open'); hamburgerBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+
+hamburgerBtn.addEventListener('click', openMenu);
+mobileClose.addEventListener('click', closeMenu);
+mobileBackdrop.addEventListener('click', closeMenu);
+document.querySelectorAll('.mobile-link').forEach(function(link) { link.addEventListener('click', closeMenu); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
+
+/* Disable right click */
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+</script>
+</body>
+</html>
