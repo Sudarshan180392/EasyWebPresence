@@ -304,6 +304,15 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 }
 
 /* RESPONSIVE */
+@media (min-width: 1400px) {
+  .usp-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 961px) and (max-width: 1399px) {
+  .usp-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; }
   .hero-right { padding: 3rem 6vw 6rem; }
@@ -317,5 +326,6 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   .section { padding: 4.5rem 5vw; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
+  .usp-grid { grid-template-columns: repeat(1, 1fr);
 }
 
