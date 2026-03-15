@@ -170,7 +170,7 @@ tbody td:last-child { color: var(--gold-pale); font-weight: 500; }
 
 /* FOOTER */
 footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem 7vw 2rem; }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
 .footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); margin-bottom: .75rem; }
 .footer-brand-desc { font-size: .875rem; color: var(--muted); line-height: 1.75; font-weight: 300; max-width: 280px; }
 .footer-col-title { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
