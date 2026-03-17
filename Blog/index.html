@@ -4,10 +4,12 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Blog | Web Design & Development Insights – Easy Web Presence</title>
-<meta name="description" content="Practical insights on web design, SEO, performance, and building digital assets that last. Written by Sudarshan Mishra, founder of Easy Web Presence."/>
+<meta name="description" content="Practical insights on web design, SEO, performance, and why HTML/CSS/JS websites beat WordPress for small businesses in India. Written by Sudarshan Mishra, founder of Easy Web Presence."/>
 <link rel="canonical" href="https://www.easywebpresence.co.in/Blog/"/>
 <meta name="robots" content="index, follow"/>
 <meta name="author" content="Sudarshan Mishra – Easy Web Presence"/>
+
+<!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Blog | Web Design & Development Insights – Easy Web Presence"/>
 <meta property="og:description" content="Practical insights on web design, SEO, performance, and building digital assets that last."/>
@@ -15,22 +17,79 @@
 <meta property="og:image" content="https://www.easywebpresence.co.in/Logo.jpg"/>
 <meta property="og:site_name" content="Easy Web Presence"/>
 <meta property="og:locale" content="en_IN"/>
+
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Blog | Easy Web Presence"/>
 <meta name="twitter:description" content="Practical web design & SEO insights from India's custom website development studio."/>
 <meta name="twitter:image" content="https://www.easywebpresence.co.in/Logo.jpg"/>
+
+<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.easywebpresence.co.in/#website",
+      "url": "https://www.easywebpresence.co.in/",
+      "name": "Easy Web Presence",
+      "description": "Custom-coded websites for professionals and businesses in India.",
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "https://www.easywebpresence.co.in/Blog/?s={search_term_string}" },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.easywebpresence.co.in/#business",
+      "name": "Easy Web Presence",
+      "url": "https://www.easywebpresence.co.in/",
+      "logo": { "@type": "ImageObject", "url": "https://www.easywebpresence.co.in/Logo.jpg" },
+      "founder": { "@type": "Person", "name": "Sudarshan Mishra" },
+      "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "telephone": "+91-6388175966",
+        "email": "contact@easywebpresence.co.in"
+      },
+      "sameAs": [
+        "https://www.instagram.com/easywebpresence/",
+        "https://www.facebook.com/profile.php?id=61579526788371",
+        "https://x.com/EasyWebAppear"
+      ]
+    },
+    {
       "@type": "Blog",
       "@id": "https://www.easywebpresence.co.in/Blog/",
       "url": "https://www.easywebpresence.co.in/Blog/",
       "name": "Easy Web Presence Blog",
-      "description": "Insights on web design, SEO, and building digital assets that last.",
+      "description": "Insights on web design, SEO, performance, and building digital assets that last.",
       "inLanguage": "en-IN",
       "publisher": { "@id": "https://www.easywebpresence.co.in/#business" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.easywebpresence.co.in/Blog/#article-html-vs-wordpress",
+      "headline": "Why You Might Need an HTML CSS JS Website — and Not WordPress",
+      "description": "For small businesses, startups, doctors, lawyers, and professionals in India, a custom-coded HTML/CSS/JS website often outperforms WordPress in speed, security, and reliability.",
+      "image": "https://www.easywebpresence.co.in/Logo.jpg",
+      "datePublished": "2026-03-17",
+      "dateModified": "2026-03-17",
+      "author": {
+        "@type": "Person",
+        "name": "Sudarshan Mishra",
+        "url": "https://www.easywebpresence.co.in/About/"
+      },
+      "publisher": { "@id": "https://www.easywebpresence.co.in/#business" },
+      "mainEntityOfPage": "https://www.easywebpresence.co.in/Blog/",
+      "articleSection": "Tech",
+      "keywords": ["HTML CSS JS website", "WordPress vs static website", "custom coded website India", "website speed", "web security", "React website", "small business website India", "website for doctors lawyers"],
+      "inLanguage": "en-IN",
+      "wordCount": 580
     },
     {
       "@type": "BreadcrumbList",
@@ -43,6 +102,7 @@
   ]
 }
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -52,6 +112,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3924056609171441" crossorigin="anonymous"></script>
+
 <style>
 :root {
   --navy: #0b1526;
@@ -72,7 +133,7 @@ body { font-family: 'Jost', sans-serif; background: var(--navy); color: var(--wh
 ::-webkit-scrollbar-thumb { background: var(--gold); }
 
 /* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1rem 5vw; background: rgba(11,21,38,.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+nav.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1rem 5vw; background: rgba(11,21,38,.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
 .nav-logo { display: flex; align-items: flex-end; gap: 10px; text-decoration: none; }
 .nav-logo img { height: 44px; width: auto; }
 .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold-light); }
@@ -82,8 +143,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
 .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
 .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold-light); padding: .55rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: all .25s; }
 .nav-cta:hover { background: var(--gold); color: var(--navy); }
-
-/* HAMBURGER */
 .hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 40px; height: 40px; background: transparent; border: 1px solid var(--border); cursor: pointer; padding: 8px; z-index: 301; transition: border-color .25s; }
 .hamburger:hover { border-color: var(--gold); }
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold-light); border-radius: 2px; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .25s, width .3s; transform-origin: center; }
@@ -125,41 +184,85 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
 .blog-hero-sub { font-size: 1.05rem; line-height: 1.8; font-weight: 300; color: var(--muted); max-width: 560px; animation: fadeUp .7s .25s ease both; }
 .blog-hero-sub strong { color: var(--gold-light); font-weight: 600; }
 
-/* SECTIONS */
-.section { padding: 6rem 7vw; }
-.s-label { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
-.s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; color: var(--white); }
-.s-title span { color: var(--gold-light); font-style: italic; }
-.s-rule { width: 50px; height: 1px; background: var(--gold); margin: 1.25rem 0; opacity: .6; }
-.s-sub { font-size: .95rem; font-weight: 300; color: var(--muted); max-width: 560px; line-height: 1.8; }
+/* TABS */
+.tabs-section { padding: 4rem 7vw 0; background: var(--navy-mid); }
+.tabs-bar { display: flex; gap: 0; border-bottom: 1px solid var(--border); }
+.tab-btn { font-family: 'Jost', sans-serif; font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); background: transparent; border: none; border-bottom: 2px solid transparent; padding: .85rem 2rem; cursor: pointer; transition: color .25s, border-color .25s; position: relative; bottom: -1px; }
+.tab-btn:hover { color: var(--gold-light); }
+.tab-btn.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+.tab-count { display: inline-flex; align-items: center; justify-content: center; background: rgba(201,149,74,.15); border: 1px solid var(--border); color: var(--gold); font-size: .65rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; margin-left: .5rem; }
 
-/* ARTICLES SECTION */
-.coming-soon-section { background: var(--navy-mid); }
-.featured-coming { margin-top: 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); overflow: hidden; }
-.featured-left { background: rgba(201,149,74,.04); padding: 3.5rem 3rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
-.featured-left::before { content: '✦'; position: absolute; bottom: -1rem; right: 1.5rem; font-size: 9rem; color: rgba(201,149,74,.05); font-family: 'Cormorant Garamond', serif; line-height: 1; pointer-events: none; }
-.featured-tag { display: inline-flex; align-items: center; gap: .5rem; background: rgba(201,149,74,.12); border: 1px solid var(--border); padding: .3rem .85rem; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; width: fit-content; }
-.featured-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 1.25rem; }
-.featured-left h2 em { color: var(--gold-light); font-style: italic; }
-.featured-left p { font-size: .92rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 2rem; }
-.coming-pill { display: inline-flex; align-items: center; gap: .6rem; border: 1px solid var(--gold); padding: .55rem 1.25rem; font-size: .78rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-light); width: fit-content; }
-.coming-pill .dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; animation: pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
-.featured-right { display: flex; flex-direction: column; }
-.mini-article { background: var(--navy-mid); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: .5rem; position: relative; overflow: hidden; transition: background .25s; flex: 1; border-bottom: 1px solid var(--border); }
-.mini-article:last-child { border-bottom: none; }
-.mini-article:hover { background: rgba(201,149,74,.06); }
+/* ARTICLES */
+.articles-section { padding: 3.5rem 7vw 6rem; background: var(--navy-mid); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Article card */
+.article-card { border: 1px solid var(--border); overflow: hidden; margin-bottom: 2.5rem; transition: border-color .3s; background: rgba(201,149,74,.02); }
+.article-card:hover { border-color: rgba(201,149,74,.5); }
+.article-meta-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); background: rgba(201,149,74,.04); }
+.article-cat-pill { display: inline-flex; align-items: center; gap: .4rem; background: rgba(201,149,74,.12); border: 1px solid var(--border); padding: .25rem .8rem; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.article-date { font-size: .75rem; color: var(--muted); font-weight: 300; }
+.article-read-time { font-size: .75rem; color: var(--muted); font-weight: 300; }
+.article-body { padding: 2.5rem 2rem 2rem; }
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: .9rem; }
+.article-body h2 em { color: var(--gold-light); font-style: italic; }
+.article-rule { width: 40px; height: 1px; background: var(--gold); opacity: .5; margin-bottom: 1.5rem; }
+.article-excerpt { font-size: .95rem; color: var(--muted); font-weight: 300; line-height: 1.85; margin-bottom: 1.75rem; }
+.article-excerpt strong { color: var(--gold-pale); font-weight: 600; }
+
+/* Full article */
+.article-full { display: none; }
+.article-full.open { display: block; }
+.article-full p { font-size: .92rem; color: var(--muted); font-weight: 300; line-height: 1.9; margin-bottom: .9rem; }
+.article-full p strong { color: var(--gold-pale); font-weight: 600; }
+.af-highlight { border-left: 2px solid var(--gold); padding: 1rem 1.25rem; background: rgba(201,149,74,.06); margin: 1.25rem 0; font-size: .9rem; color: var(--gold-pale); font-weight: 300; line-height: 1.8; font-style: italic; }
+.af-source { font-size: .78rem; color: rgba(201,149,74,.5); margin-top: .25rem; }
+.af-closing { border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 2rem; }
+.af-sign { margin-top: 1.25rem; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--gold-light); }
+
+.article-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.btn-read { background: transparent; border: 1px solid var(--gold); color: var(--gold-light); padding: .55rem 1.5rem; font-family: 'Jost', sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: all .25s; }
+.btn-read:hover { background: var(--gold); color: var(--navy); }
+.btn-share { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: .55rem 1.25rem; font-family: 'Jost', sans-serif; font-size: .78rem; font-weight: 400; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; transition: all .25s; }
+.btn-share:hover { border-color: var(--gold); color: var(--gold-light); }
+
+.author-strip { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 2rem; border-top: 1px solid var(--border); background: rgba(17,32,64,.5); }
+.author-avatar { width: 40px; height: 40px; border: 1px solid var(--border); background: rgba(201,149,74,.1); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+.author-name { font-size: .82rem; font-weight: 600; color: var(--gold-pale); }
+.author-role { font-size: .75rem; color: var(--muted); font-weight: 300; }
+
+/* Mini upcoming cards */
+.upcoming-label { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-top: 1rem; margin-bottom: 1.25rem; }
+.mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.mini-article { background: var(--navy); border: 1px solid var(--border); padding: 1.5rem 1.25rem; display: flex; flex-direction: column; gap: .45rem; position: relative; overflow: hidden; transition: background .25s, border-color .25s; }
+.mini-article:hover { background: rgba(201,149,74,.04); border-color: rgba(201,149,74,.4); }
 .mini-article::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--gold); transform: scaleY(0); transform-origin: top; transition: transform .3s; }
 .mini-article:hover::before { transform: scaleY(1); }
 .mini-cat { font-size: .68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
 .mini-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; color: var(--gold-pale); line-height: 1.3; }
 .mini-desc { font-size: .8rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
-.mini-status { font-size: .7rem; color: rgba(201,149,74,.6); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; margin-top: .25rem; }
+.mini-status { font-size: .7rem; color: rgba(201,149,74,.55); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; margin-top: .25rem; display: flex; align-items: center; gap: .4rem; }
+.mini-status-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; opacity: .6; animation: pulse 1.8s ease-in-out infinite; }
 
-/* TOPICS */
-.topics-section { background: var(--navy); }
+/* Coming soon box */
+.coming-soon-box { border: 1px solid var(--border); padding: 4rem 3rem; text-align: center; background: rgba(201,149,74,.02); position: relative; overflow: hidden; }
+.coming-soon-box::before { content: '✦'; position: absolute; bottom: -1.5rem; right: 2rem; font-size: 10rem; color: rgba(201,149,74,.04); font-family: 'Cormorant Garamond', serif; line-height: 1; pointer-events: none; }
+.cs-icon { font-size: 2.5rem; color: rgba(201,149,74,.3); margin-bottom: 1rem; }
+.coming-soon-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: .75rem; }
+.coming-soon-box h3 em { color: var(--gold-light); font-style: italic; }
+.coming-soon-box p { font-size: .9rem; color: var(--muted); font-weight: 300; line-height: 1.8; max-width: 480px; margin: 0 auto 2rem; }
+.coming-pill { display: inline-flex; align-items: center; gap: .6rem; border: 1px solid var(--gold); padding: .55rem 1.25rem; font-size: .78rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-light); }
+.coming-pill .dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; animation: pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
+
+/* Generic section helpers */
+.s-label { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
+.s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.1; color: var(--white); }
+.s-title span { color: var(--gold-light); font-style: italic; }
+.s-rule { width: 50px; height: 1px; background: var(--gold); margin: 1.25rem 0; opacity: .6; }
 
 /* NEWSLETTER */
-.newsletter-section { background: var(--navy-mid); padding: 6rem 7vw; position: relative; overflow: hidden; }
+.newsletter-section { background: var(--navy); padding: 6rem 7vw; position: relative; overflow: hidden; }
 .newsletter-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(201,149,74,.09) 0%, transparent 60%); pointer-events: none; }
 .newsletter-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; text-align: center; }
 .newsletter-inner .s-label { display: block; }
@@ -175,8 +278,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
 .nl-btn:disabled { cursor: not-allowed; opacity: .7; }
 .nl-note { font-size: .72rem; color: var(--muted); margin-top: .9rem; }
 
-/* CONTRIBUTE STRIP */
-.contribute-strip { background: var(--navy); padding: 3rem 7vw; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+/* CONTRIBUTE */
+.contribute-strip { background: var(--navy-mid); padding: 3rem 7vw; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .contribute-strip p { font-size: .95rem; font-weight: 300; color: var(--muted); line-height: 1.8; text-align: center; max-width: 700px; margin: 0 auto; }
 .contribute-strip strong { color: var(--gold-pale); font-weight: 600; }
 
@@ -205,14 +308,10 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 .footer-copy { font-size: .78rem; color: rgba(244,240,234,.3); }
 .footer-owner { font-size: .82rem; color: var(--muted); border: 1px solid var(--border); padding: .35rem .9rem; font-style: italic; font-family: 'Cormorant Garamond', serif; }
 
-/* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.75); } }
 
-/* RESPONSIVE */
 @media (max-width: 960px) {
-  .featured-coming { grid-template-columns: 1fr; }
-  .featured-left { border-right: none; border-bottom: 1px solid var(--border); }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
@@ -220,8 +319,13 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 }
 @media (max-width: 600px) {
   .blog-hero h1 { font-size: 2.6rem; }
-  .section { padding: 4.5rem 5vw; }
-  .featured-left { padding: 2.25rem 1.5rem; }
+  .tabs-section { padding: 3rem 5vw 0; }
+  .articles-section { padding: 2.5rem 5vw 5rem; }
+  .tab-btn { padding: .75rem 1.1rem; font-size: .72rem; }
+  .article-meta-bar { padding: 1rem 1.25rem; }
+  .article-body { padding: 1.75rem 1.25rem 1.5rem; }
+  .author-strip { padding: 1.1rem 1.25rem; }
+  .coming-soon-box { padding: 3rem 1.5rem; }
   .nl-form { flex-direction: column; border: none; gap: .75rem; }
   .nl-input { border: 1px solid var(--border); }
   .footer-top { grid-template-columns: 1fr; }
@@ -230,13 +334,11 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav class="site-nav">
   <a href="/" class="nav-logo">
     <img src="/Logo.jpg" alt="Easy Web Presence logo" width="44" height="44"/>
     <span class="nav-logo-text">Easy<span> Web Presence</span></span>
@@ -245,7 +347,7 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
     <li><a href="/">Home</a></li>
     <li><a href="/About/">About Us</a></li>
     <li><a href="/how-we-work/">How We Work</a></li>
-    <li><a href="/Testimonials/">What our clients say? </a></li>
+    <li><a href="/Testimonials/">What our clients say?</a></li>
     <li><a href="/#pricing">Pricing</a></li>
     <li><a href="/#faq">FAQ</a></li>
     <li><a href="/Blog/" class="active">Blog</a></li>
@@ -268,7 +370,7 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
       <li><a href="/" class="mobile-link"><span class="m-icon">&#127968;</span> Home</a></li>
       <li><a href="/About/" class="mobile-link"><span class="m-icon">&#128100;</span> About Us</a></li>
       <li><a href="/#usp" class="mobile-link"><span class="m-icon">&#9889;</span> Services</a></li>
-      <li><a href="/Testimonials/"><span class="m-icon">🔊</span>What our clients say? </a></li>
+      <li><a href="/Testimonials/"><span class="m-icon">🔊</span> What our clients say?</a></li>
       <li><a href="/#pricing" class="mobile-link"><span class="m-icon">&#8377;</span> Pricing</a></li>
       <li><a href="/#faq" class="mobile-link"><span class="m-icon">&#10067;</span> FAQ</a></li>
       <li><a href="/Blog/" class="mobile-link"><span class="m-icon">&#128221;</span> Blog</a></li>
@@ -297,52 +399,122 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   </div>
 </section>
 
+<!-- TABS -->
+<div class="tabs-section">
+  <div class="tabs-bar" role="tablist" aria-label="Blog categories">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-tech" id="tab-tech" onclick="switchTab('tech')">
+      Tech <span class="tab-count">1</span>
+    </button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-nontech" id="tab-nontech" onclick="switchTab('nontech')">
+      Non-Tech <span class="tab-count">0</span>
+    </button>
+  </div>
+</div>
+
 <!-- ARTICLES -->
-<section class="section coming-soon-section" id="articles">
-  <div class="s-label">Coming Soon</div>
-  <h2 class="s-title">Articles Worth <span>Your Time</span></h2>
-  <div class="s-rule" aria-hidden="true"></div>
-  <div class="featured-coming">
-    <div class="featured-left">
-      <div>
-        <div class="featured-tag">First Article</div>
-        <h2>Why WordPress is <em>Quietly Killing</em> Your Website's Performance</h2>
-        <p>You were sold "easy." But easy comes with 40 plugins, a database that can be hacked, and a site that loads in 6 seconds on mobile. This piece breaks down exactly what happens under the hood — and why clean HTML still wins.</p>
+<section class="articles-section" id="articles">
+
+  <!-- TECH PANEL -->
+  <div class="tab-panel active" id="panel-tech" role="tabpanel" aria-labelledby="tab-tech">
+
+    <article class="article-card fade-in" itemscope itemtype="https://schema.org/BlogPosting">
+      <meta itemprop="datePublished" content="2026-03-17"/>
+      <meta itemprop="dateModified" content="2026-03-17"/>
+      <meta itemprop="author" content="Sudarshan Mishra"/>
+      <meta itemprop="publisher" content="Easy Web Presence"/>
+      <meta itemprop="keywords" content="HTML CSS JS website, WordPress alternative, custom website India, fast website, secure website"/>
+
+      <div class="article-meta-bar">
+        <span class="article-cat-pill"><i class="fa-solid fa-code" style="font-size:.65rem;"></i>&nbsp; Tech</span>
+        <span class="article-date">17 March 2026</span>
+        <span class="article-read-time">&#128336; 4 min read</span>
       </div>
-      <div class="coming-pill">
-        <span class="dot"></span>
-        Publishing Soon
+
+      <div class="article-body">
+        <h2 itemprop="headline">Why You Might Need an HTML CSS JS Website —<em> and Not WordPress</em></h2>
+        <div class="article-rule" aria-hidden="true"></div>
+        <p class="article-excerpt" itemprop="description">
+          For small businesses, startups, doctors, lawyers, and professionals across India, a custom-coded HTML/CSS/JS website often outperforms WordPress where it matters most: <strong>speed, security, and long-term reliability.</strong> Here is the honest breakdown.
+        </p>
+
+        <!-- Full article -->
+        <div class="article-full" id="full-article-1" itemprop="articleBody">
+
+          <p>Let me be clear first that I'm not here to bash WordPress. It's a great platform that empowers a significant portion of the internet. But for many small businesses like startups and professionals like doctors, lawyers etc. in India, it's often not the correct tool for the job.</p>
+
+          <p>Given below are the reasons why I say this:</p>
+
+          <p>The first reason being, when you browse anything online in today's era speed is everything. As per Google's own research which states that as page load time increases, the probability of a visitor leaving you website jumps by <strong>32%</strong>. Many WordPress websites are bloated with different themes, sliders, and large number of plugins making them slow than a regular static website.</p>
+
+          <div class="af-highlight">
+            "As page load time goes from 1s to 3s, the probability of bounce increases by 32%."
+            <div class="af-source">Source: Google / Deloitte, 2018</div>
+          </div>
+
+          <p>Second of all is the security. Security in a website is the elephant in the room. As per an annual Threat research report of Sucuri's Website, <strong>wordpress regularly accounts for majority of infected websites</strong> they clean, and the main reason of the security issue being the outdated plugins and themes in the platform which create several vulnerabilities that attackers keep exploiting relentlessly.</p>
+
+          <p>This is where coded HTML, CSS, and JavaScript websites make a difference. With no database, and no plugins involved it makes difficult for the attackers to bring your website into a compromised state. HTML, CSS &amp; JS codes also make your website load faster along with keeping it secured by architecture, and not by luck.</p>
+
+          <p>Now coming to those businesses which need richer interactivity, because not all issues can be addressed by HTML, CSS &amp; JS. Sometimes businesses need scale along with speed. React as a framework comes to the rescue there. React was build on this foundation, to deliver smooth, app-like experiences without sacrificing upon the performance of your website. React is currently also used by many big organisations like Facebook, Netflix etc. to name a few.</p>
+
+          <p>Now the final truth about wordpress. WordPress is a excellent platform for bloggers and content creating firms who need to publish daily without need to engage with a developer, who donot want speed but just content for their platform. Many newspaper websites like that of Indian Express etc. use wordpress.</p>
+
+          <p>But if you're a doctor, an architect, a lawyer, or a business owner who needs a fast, secure, professional web presence, you deserve something built specifically for you. Something that is fast something which save's your client's time &amp; there we serve you.</p>
+
+          <div class="af-closing">
+            <p>We at Easy Web Presence believe in custom coding each website as per your needs. Because you and your business needs to stand out &amp; that is where we come to your help.</p>
+            <div class="af-sign">
+              Signing off<br>
+              — Sudarshan Mishra<br>
+              <span style="font-size:.85rem; color:var(--muted); font-style:normal; font-family:'Jost',sans-serif; font-weight:300;">Easy Web Presence</span>
+            </div>
+          </div>
+
+        </div><!-- /article-full -->
+
+        <div class="article-actions" style="margin-top:1.5rem;">
+          <button class="btn-read" id="readBtn1" onclick="toggleArticle('full-article-1','readBtn1')">Read Full Article</button>
+          <button class="btn-share" onclick="shareArticle()">&#128279; Share</button>
+        </div>
       </div>
-    </div>
-    <div class="featured-right">
-      <div class="mini-article">
+    </article>
+
+    <!-- Upcoming -->
+    <div class="upcoming-label">Coming Up in Tech</div>
+    <div class="mini-grid">
+      <div class="mini-article fade-in">
         <div class="mini-cat">SEO</div>
         <div class="mini-title">What Google Actually Looks for in a Small Business Website</div>
-        <div class="mini-desc">Forget keyword stuffing. Here's the technical and content checklist that actually moves the needle for local businesses.</div>
-        <div class="mini-status">In the works</div>
+        <div class="mini-desc">Forget keyword stuffing. The technical and content checklist that actually moves the needle for local businesses in India.</div>
+        <div class="mini-status"><span class="mini-status-dot"></span> In the works</div>
       </div>
-      <div class="mini-article">
+      <div class="mini-article fade-in">
         <div class="mini-cat">Web Design</div>
         <div class="mini-title">One-Time Fee vs Monthly Subscription: A Cost Breakdown</div>
         <div class="mini-desc">The math most agencies don't want you to do. We'll do it for you — transparently.</div>
-        <div class="mini-status">In the works</div>
+        <div class="mini-status"><span class="mini-status-dot"></span> In the works</div>
       </div>
-      <div class="mini-article">
+      <div class="mini-article fade-in">
         <div class="mini-cat">Performance</div>
-        <div class="mini-title">Your Site Loads in &lt;3 Seconds. Here's What That's Costing You.</div>
+        <div class="mini-title">Your Site Loads in &gt;3 Seconds. Here's What That's Costing You.</div>
         <div class="mini-desc">Every extra second of load time is lost revenue. This piece quantifies it with real data.</div>
-        <div class="mini-status">In the works</div>
+        <div class="mini-status"><span class="mini-status-dot"></span> In the works</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- TOPICS (commented out as per your version) -->
-<section class="section topics-section" id="topics">
-  <div class="s-label">What We Write About</div>
-  <h2 class="s-title">Topics That <span>Actually Matter</span></h2>
-  <div class="s-rule" aria-hidden="true"></div>
-  <p class="s-sub">No listicles. No filler. Every article answers a real question a business owner or developer has faced.</p>
+  </div>
+  <!-- /tech panel -->
+
+  <!-- NON-TECH PANEL -->
+  <div class="tab-panel" id="panel-nontech" role="tabpanel" aria-labelledby="tab-nontech">
+    <div class="coming-soon-box fade-in">
+      <div class="cs-icon" aria-hidden="true">✦</div>
+      <h3>Articles <em>Coming Soon</em></h3>
+      <p>We're working on non-technical reads for business owners, founders, and professionals — practical insights without the jargon. Subscribe below to be the first to know when we publish.</p>
+      <div class="coming-pill"><span class="dot"></span> Coming Soon</div>
+    </div>
+  </div>
+
 </section>
 
 <!-- NEWSLETTER -->
@@ -351,9 +523,7 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
     <div class="s-label">Stay in the Loop</div>
     <h2 class="s-title">Get Notified When <span>We Publish</span></h2>
     <div class="s-rule"></div>
-    <p class="nl-sub">
-      No newsletters that feel like ads. Just <strong>one email when a new article drops</strong> — practical, actionable, worth reading.
-    </p>
+    <p class="nl-sub">No newsletters that feel like ads. Just <strong>one email when a new article drops</strong> — practical, actionable, worth reading.</p>
     <form class="nl-form" onsubmit="handleSubscribe(event)">
       <input type="email" class="nl-input" placeholder="your@email.com" required aria-label="Email address"/>
       <button type="submit" class="nl-btn">Notify Me</button>
@@ -362,21 +532,15 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   </div>
 </section>
 
-<!-- CONTRIBUTE STRIP -->
+<!-- CONTRIBUTE -->
 <div class="contribute-strip">
-  <p>
-    Passionate about writing for tech &amp; need an exciting platform?
-    Just <strong>send us your article with full name &amp; details on our email</strong> — we will publish it here with your name &amp; photo.
-  </p>
+  <p>Passionate about writing for tech &amp; need an exciting platform? Just <strong>send us your article with full name &amp; details on our email</strong> — we will publish it here with your name &amp; photo.</p>
 </div>
 
-<!-- CLOSING -->
+<!-- CLOSING QUOTE -->
 <section class="quote-section">
   <div class="quote-mark" aria-hidden="true">"</div>
-  <p class="quote-text">
-    Good writing, like good code —<br>
-    <span>no bloat, no shortcuts, built to last.</span>
-  </p>
+  <p class="quote-text">Good writing, like good code —<br><span>no bloat, no shortcuts, built to last.</span></p>
   <div class="quote-cta">
     <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" rel="noopener" class="btn-gold">Build Your Website</a>
     <a href="/About/" class="btn-outline">About Us</a>
@@ -388,7 +552,7 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   <div class="footer-top">
     <div>
       <div class="footer-brand-name">Easy Web Presence</div>
-      <p class="footer-brand-desc">Custom-coded websites for Professionals and businesses. Fast, secure, and owned by you forever.</p>
+      <p class="footer-brand-desc">Custom-coded websites for professionals and businesses. Fast, secure, and owned by you forever.</p>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
@@ -397,7 +561,7 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
         <li><a href="/how-we-work/">How We Work</a></li>
         <li><a href="/#pricing">Pricing</a></li>
         <li><a href="/#clients">Who We Serve</a></li>
-        <li><a href="/Testimonials/">What our clients say? </a></li>
+        <li><a href="/Testimonials/">What our clients say?</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -408,28 +572,21 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
         <li><a href="/Refund/">Refund Policy</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <div class="footer-col-title">Social Media</div>
       <ul>
-        <div class="social-icons">
-        <li><a href="https://www.instagram.com/easywebpresence/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-label="Visit our Instagram"></i> Instagram</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61579526788371" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook" aria-label="Visit our Facebook"></i> Facebook</a></li>
-        <li><a href="https://x.com/EasyWebAppear" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" aria-label="Visit our Twitter"></i> (Formerly Twitter)</a></li>
-          <li> <a href="/Blog/" target="_blank" rel="noopener noreferrer" aria-label="Read our blog section"><i class="fa-solid fa-blog"></i> Blogs </a></li>
-      </div>
+        <li><a href="https://www.instagram.com/easywebpresence/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61579526788371" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+        <li><a href="https://x.com/EasyWebAppear" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> (Formerly Twitter)</a></li>
+        <li><a href="/Blog/"><i class="fa-solid fa-blog"></i> Blogs</a></li>
       </ul>
     </div>
-
-
-
-
     <div class="footer-col">
       <div class="footer-col-title">Support</div>
       <ul>
         <li><a href="/#faq">FAQ</a></li>
         <li><a href="https://wa.me/916388175966" target="_blank" rel="noopener">WhatsApp Support</a></li>
-        <li><a href="mailto:contact@easywebpresence.co.in">Email Support</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#9cfff3f2e8fdffe8dcf9fdefe5ebf9feeceef9eff9f2fff9b2fff3b2f5f2">Email Support</a></li>
       </ul>
     </div>
   </div>
@@ -439,90 +596,87 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* Tab switching */
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.getElementById('tab-'+tab).classList.add('active');
+  document.getElementById('tab-'+tab).setAttribute('aria-selected','true');
+  document.getElementById('panel-'+tab).classList.add('active');
+}
+
+/* Toggle full article */
+function toggleArticle(id, btnId) {
+  var full = document.getElementById(id);
+  var btn  = document.getElementById(btnId);
+  var isOpen = full.classList.contains('open');
+  full.classList.toggle('open');
+  btn.textContent = isOpen ? 'Read Full Article' : 'Collapse Article';
+  if (!isOpen) {
+    setTimeout(function() { full.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 80);
+  }
+}
+
+/* Share */
+function shareArticle() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Why You Might Need an HTML CSS JS Website — Not WordPress',
+      text: 'An honest breakdown on why custom-coded websites outperform WordPress for small businesses in India.',
+      url: window.location.href
+    }).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      alert('Link copied to clipboard!');
+    }).catch(function() { prompt('Copy this link:', window.location.href); });
+  }
+}
+
 /* Scroll reveal */
 function initReveal() {
-  var elements = document.querySelectorAll('.fade-in');
-  if (!('IntersectionObserver' in window)) {
-    elements.forEach(function(el) { el.style.opacity = '1'; el.style.transform = 'none'; });
-    return;
-  }
+  var els = document.querySelectorAll('.fade-in');
+  if (!('IntersectionObserver' in window)) { els.forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; }); return; }
   var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
-    });
-  }, { threshold: 0.08 });
-  elements.forEach(function(el) {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(22px)';
-    el.style.transition = 'opacity .65s ease, transform .65s ease';
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; obs.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  els.forEach(function(el, i) {
+    el.style.opacity='0'; el.style.transform='translateY(22px)';
+    el.style.transition='opacity .65s ease, transform .65s ease';
+    el.style.transitionDelay=(i*0.07)+'s';
     obs.observe(el);
   });
 }
-
-document.querySelectorAll('.mini-article').forEach(function(c, i) {
-  c.style.transitionDelay = (i * 0.1) + 's';
-  c.classList.add('fade-in');
-});
-document.querySelectorAll('.featured-coming, .newsletter-inner').forEach(function(el) {
-  el.classList.add('fade-in');
-});
 initReveal();
 
-/* Newsletter — Vercel serverless function */
+/* Newsletter */
 async function handleSubscribe(e) {
   e.preventDefault();
-  var btn   = e.target.querySelector('.nl-btn');
-  var input = e.target.querySelector('.nl-input');
-  var email = input.value.trim();
-  var note  = document.getElementById('nl-note');
-
-  btn.textContent = 'Adding you...';
-  btn.disabled = true;
-
+  var btn=e.target.querySelector('.nl-btn'), input=e.target.querySelector('.nl-input'), note=document.getElementById('nl-note');
+  btn.textContent='Adding you...'; btn.disabled=true;
   try {
-    var apiRes = await fetch('/api/subscribe', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email: email })
-    });
-    var data = await apiRes.json();
-    if (!apiRes.ok) throw new Error(data.error || 'Something went wrong');
-
-    btn.textContent = "You're on the list!";
-    btn.style.background = 'rgba(201,149,74,.15)';
-    btn.style.color = '#e2b87a';
-    btn.style.border = '1px solid #c9954a';
-    input.value = '';
-    input.placeholder = 'Check your inbox!';
-    note.textContent = "Welcome email sent. We'll be in touch when we publish.";
-
-  } catch (err) {
-    btn.textContent = 'Try Again';
-    btn.disabled = false;
-    note.textContent = 'Something went wrong. Please try again or email us directly.';
-    note.style.color = '#e07070';
-    console.error('Subscribe error:', err);
+    var r=await fetch('/api/subscribe',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:input.value.trim()})});
+    var d=await r.json();
+    if (!r.ok) throw new Error(d.error||'Something went wrong');
+    btn.textContent="You're on the list!"; btn.style.cssText='background:rgba(201,149,74,.15);color:#e2b87a;border:1px solid #c9954a;';
+    input.value=''; input.placeholder='Check your inbox!';
+    note.textContent="Welcome email sent. We'll be in touch when we publish.";
+  } catch(err) {
+    btn.textContent='Try Again'; btn.disabled=false;
+    note.textContent='Something went wrong. Please try again or email us directly.'; note.style.color='#e07070';
   }
 }
 
 /* Hamburger */
-var hamburgerBtn   = document.getElementById('hamburgerBtn');
-var mobileMenu     = document.getElementById('mobileMenu');
-var mobileClose    = document.getElementById('mobileClose');
-var mobileBackdrop = document.getElementById('mobileBackdrop');
-
-function openMenu() { mobileMenu.classList.add('open'); hamburgerBtn.classList.add('open'); hamburgerBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
-function closeMenu() { mobileMenu.classList.remove('open'); hamburgerBtn.classList.remove('open'); hamburgerBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
-
-hamburgerBtn.addEventListener('click', openMenu);
-mobileClose.addEventListener('click', closeMenu);
-mobileBackdrop.addEventListener('click', closeMenu);
-document.querySelectorAll('.mobile-link').forEach(function(link) { link.addEventListener('click', closeMenu); });
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
+var hBtn=document.getElementById('hamburgerBtn'), mMenu=document.getElementById('mobileMenu'), mClose=document.getElementById('mobileClose'), mBack=document.getElementById('mobileBackdrop');
+function openMenu(){ mMenu.classList.add('open'); hBtn.classList.add('open'); hBtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+function closeMenu(){ mMenu.classList.remove('open'); hBtn.classList.remove('open'); hBtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+hBtn.addEventListener('click',openMenu); mClose.addEventListener('click',closeMenu); mBack.addEventListener('click',closeMenu);
+document.querySelectorAll('.mobile-link').forEach(function(l){ l.addEventListener('click',closeMenu); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&mMenu.classList.contains('open')) closeMenu(); });
 
 /* Disable right click */
-document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+document.addEventListener('contextmenu',function(e){ e.preventDefault(); });
 </script>
 </body>
 </html>
