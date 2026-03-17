@@ -347,6 +347,17 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
     letter-spacing: .04em;
 }
 
+.hero-tagline {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var;
+  line-height:1.8;
+  max-width: 480px;
+  margin-bottom: 1.75rem;
+  font-style: italic;
+  border-left: 2px solid var();
+  padding-left: 1rem;
+}
 @media (max-width: 600px) {
     .pagespeed-screens { grid-template-columns: 1fr; }
 }
