@@ -481,25 +481,8 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   </div>
 </footer>
 
-<script>
-const hamburgerBtn   = document.getElementById('hamburgerBtn');
-const mobileMenu     = document.getElementById('mobileMenu');
-const mobileClose    = document.getElementById('mobileClose');
-const mobileBackdrop = document.getElementById('mobileBackdrop');
-function openMenu() { mobileMenu.classList.add('open'); hamburgerBtn.classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeMenu() { mobileMenu.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow = ''; }
-hamburgerBtn.addEventListener('click', openMenu);
-mobileClose.addEventListener('click', closeMenu);
-mobileBackdrop.addEventListener('click', closeMenu);
-document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-</script>
+<script src="script.js" defer>
 
-<!-- Disable RC -->
- <script>
-document.addEventListener("contextmenu", function(event) {
-  event.preventDefault();
-});
 </script>
 
 </body>
