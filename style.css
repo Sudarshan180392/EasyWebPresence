@@ -148,18 +148,7 @@ tbody td:last-child { color: var(--gold-pale); font-weight: 500; }
 .client-chip:hover { border-color: var(--gold); color: var(--gold-pale); background: rgba(201,149,74,.05); }
 .client-chip .ci { font-size: 1.5rem; }
 
-/* CLIENTS - RESPONSIVE */
-@media (max-width: 1024px) {
-  .clients-grid { grid-template-columns: repeat(3, 1fr); }
-}
 
-@media (max-width: 768px) {
-  .clients-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 380px) {
-  .clients-grid { grid-template-columns: repeat(1, 1fr); }
-}
 
 /* FAQ */
 .faq-section { background: var(--navy); }
@@ -489,3 +478,15 @@ footer { background: #060e1c; border-top: 1px solid var(--border); padding: 4rem
   .usp-grid { grid-template-columns: repeat(1, 1fr);
 }
 
+/* CLIENTS - RESPONSIVE */
+@media (max-width: 1024px) {
+  .clients-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 380px) {
+  .clients-grid { grid-template-columns: repeat(1, 1fr); }
+}
