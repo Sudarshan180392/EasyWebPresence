@@ -75,7 +75,4 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
 });
 
-// Disable RC
-document.addEventListener("contextmenu", function(event) {
-  event.preventDefault();
-});
+
