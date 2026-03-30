@@ -122,7 +122,7 @@
       margin-top: 2rem;
     }
 
-    /* FEATURED (full width) */
+    /* CARDS */
     .testi-card {
       border: 1px solid var(--border);
       background: var(--navy-mid);
@@ -140,6 +140,8 @@
       height: 1px;
       background: linear-gradient(90deg, var(--gold), transparent);
     }
+
+    /* FEATURED (full width) */
     .testi-card.featured {
       grid-column: 1 / -1;
       display: grid;
@@ -153,6 +155,15 @@
     .testi-card.featured::before {
       background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
     }
+
+    /* IN-PROGRESS CARD */
+    .testi-card.in-progress {
+      border-style: dashed;
+      border-color: rgba(201,149,74,.3);
+      background: linear-gradient(135deg, var(--navy-mid) 80%, rgba(201,149,74,.03) 100%);
+    }
+    .testi-card.in-progress:hover { border-color: var(--gold); border-style: solid; }
+
     .featured-badge {
       position: absolute;
       top: 1.25rem; right: 1.25rem;
@@ -164,6 +175,32 @@
       text-transform: uppercase;
       padding: .28rem .75rem;
     }
+    .progress-badge {
+      position: absolute;
+      top: 1.25rem; right: 1.25rem;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .28rem .75rem;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .progress-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .4; transform: scale(.7); }
+    }
+
     .testi-quote-mark {
       font-family: 'Cormorant Garamond', serif;
       font-size: 5rem;
@@ -342,6 +379,11 @@
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* HIDDEN (filter) */
+    .testi-card.hidden {
+      display: none;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 960px) {
       .nav-links, .nav-cta { display: none; }
@@ -356,57 +398,57 @@
     }
 
     .nav-logo { display: flex; align-items: flex-end; gap: 10px; text-decoration: none; }
-.nav-logo img { height: 44px; width: auto; }
-.nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold-light); }
-.nav-logo-text span { color: var(--white); font-weight: 400; }
+    .nav-logo img { height: 44px; width: auto; }
+    .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold-light); }
+    .nav-logo-text span { color: var(--white); font-weight: 400; }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-  <a href="/" class="nav-logo">
-    <img src="/Logo.jpg" alt="Easy Web Presence"/>
-    <span class="nav-logo-text">Easy<span> Web Presence</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="/">Home</a></li>
-    <li><a href="/About/">About Us</a></li>
-    <li><a href="/how-we-work/">How We Work</a></li>
-    <li><a href="/Testimonials/" class="active">What our clients say?</a></li>
-    <li><a href="/#pricing">Pricing</a></li>
-    <li><a href="/#faq">FAQ</a></li>
-    <li><a href="/Blog/">Blog</a></li>
-  </ul>
-  <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" class="nav-cta">Free Quote</a>
-  <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+    <a href="/" class="nav-logo">
+      <img src="/Logo.jpg" alt="Easy Web Presence"/>
+      <span class="nav-logo-text">Easy<span> Web Presence</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/About/">About Us</a></li>
+      <li><a href="/how-we-work/">How We Work</a></li>
+      <li><a href="/Testimonials/" class="active">What our clients say?</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/Blog/">Blog</a></li>
+    </ul>
+    <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank" class="nav-cta">Free Quote</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
   <!-- MOBILE DRAWER -->
   <div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-backdrop" id="mobileBackdrop"></div>
-  <div class="mobile-panel">
-    <div class="mobile-panel-header">
-      <div class="mobile-panel-logo">Easy<span> Web Presence</span></div>
-      <button class="mobile-close" id="mobileClose">✕</button>
-    </div>
-    <ul class="mobile-nav-links">
-      <li><a href="/" class="mobile-link"><span class="m-icon">🏠</span> Home</a></li>
-      <li><a href="/About/" class="mobile-link"><span class="m-icon">👤</span> About Us</a></li>
-      <li><a href="/how-we-work/" class="mobile-link"><span class="m-icon">⚙️</span> How We Work</a></li>
-      <li><a href="/Testimonials/"><span class="m-icon">🔊</span> What our clients say?</a></li>
-      <li><a href="/#pricing" class="mobile-link"><span class="m-icon">₹</span> Pricing</a></li>
-      <li><a href="/#faq" class="mobile-link"><span class="m-icon">❓</span> FAQ</a></li>
-      <li><a href="/Blog/" class="mobile-link"><span class="m-icon">📝</span> Blog</a></li>
-    </ul>
-    <div class="mobile-panel-cta">
-      <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank">📱 Get a Free Quote on WhatsApp</a>
-      <p class="mobile-panel-note">We reply ASAP</p>
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+    <div class="mobile-panel">
+      <div class="mobile-panel-header">
+        <div class="mobile-panel-logo">Easy<span> Web Presence</span></div>
+        <button class="mobile-close" id="mobileClose">✕</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="/" class="mobile-link"><span class="m-icon">🏠</span> Home</a></li>
+        <li><a href="/About/" class="mobile-link"><span class="m-icon">👤</span> About Us</a></li>
+        <li><a href="/how-we-work/" class="mobile-link"><span class="m-icon">⚙️</span> How We Work</a></li>
+        <li><a href="/Testimonials/"><span class="m-icon">🔊</span> What our clients say?</a></li>
+        <li><a href="/#pricing" class="mobile-link"><span class="m-icon">₹</span> Pricing</a></li>
+        <li><a href="/#faq" class="mobile-link"><span class="m-icon">❓</span> FAQ</a></li>
+        <li><a href="/Blog/" class="mobile-link"><span class="m-icon">📝</span> Blog</a></li>
+      </ul>
+      <div class="mobile-panel-cta">
+        <a href="https://wa.me/916388175966?text=Hi%2C%20I%20want%20to%20enquire%20about%20a%20website" target="_blank">📱 Get a Free Quote on WhatsApp</a>
+        <p class="mobile-panel-note">We reply ASAP</p>
+      </div>
     </div>
   </div>
-</div>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
@@ -415,7 +457,7 @@
       <h1 class="reveal">Words from those<br>who <em>trusted us</em></h1>
       <div class="hero-rule reveal"></div>
       <p class="reveal">Every testimonial here is real, unsolicited, and verified. No stock photos, no fake names — just honest feedback from professionals whose websites we built.
-        <br> We attach the actual client email or project link — not just a name and star rating. When evaluating any web design agency, always ask: can you show me the actual client's contact or website? If they can't, that tells you everything.
+        <br> We attach the actual client email not just a name and star rating. 
       </p>
     </div>
   </section>
@@ -451,6 +493,7 @@
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="academic">Academic</button>
     <button class="filter-btn" data-filter="business">Business</button>
+    <button class="filter-btn" data-filter="edtech">Ed-Tech</button>
     <button class="filter-btn" data-filter="medical">Medical</button>
   </div>
 
@@ -458,7 +501,9 @@
   <section class="testi-section">
     <div class="testi-grid" id="testiGrid">
 
-      <!-- FEATURED CARD — Ashutosh Rai -->
+      <!-- ═══════════════════════════════════════════
+           CARD 1 — Ashutosh Rai (Featured · Academic)
+           ═══════════════════════════════════════════ -->
       <div class="testi-card featured reveal" data-category="academic">
 
         <div>
@@ -469,31 +514,99 @@
             <div class="testi-avatar">AR</div>
             <div>
               <div class="testi-name">Ashutosh Rai</div>
-              <div class="testi-role">Ph.D. Scholar & PMRF Fellow · IIT Mandi</div>
+              <div class="testi-role">Ph.D. Scholar &amp; PMRF Fellow · IIT Mandi</div>
             </div>
             <span class="testi-source">Via Email</span>
           </div>
         </div>
 
         <div class="featured-meta">
-          <div class="meta-item">
-            
           <div class="meta-item" style="padding:0; overflow:hidden;">
-    <div class="meta-label" style="padding: 1rem 1.25rem 0.5rem;">Email proof</div>
-    <img
-        src="ashutosh-email-proof.png"
-        alt="Email from Ashutosh Rai"
-        style="width:100%; display:block; border-top: 1px solid var(--border); opacity:.88; transition:opacity .25s;"
-        onmouseover="this.style.opacity='1'"
-        onmouseout="this.style.opacity='.88'"
-    >
-</div>
+            <div class="meta-label" style="padding: 1rem 1.25rem 0.5rem;">Email proof</div>
+            <img
+              src="ashutosh-email-proof.png"
+              alt="Email from Ashutosh Rai"
+              style="width:100%; display:block; border-top: 1px solid var(--border); opacity:.88; transition:opacity .25s;"
+              onmouseover="this.style.opacity='1'"
+              onmouseout="this.style.opacity='.88'"
+            >
+          </div>
         </div>
-      </div>
+
+      </div><!-- /featured card 1 -->
 
 
+      <!-- ═══════════════════════════════════════════
+           CARD 2 — Prakhar Singh · Techversity.AI (Business / Ed-Tech)
+           ═══════════════════════════════════════════ -->
+      <div class="testi-card reveal" data-category="edtech">
 
-    </div>
+        <div class="testi-quote-mark">"</div>
+        <p class="testi-text">It has truly been a great experience collaborating with Easy Web Presence. You understood our requirements clearly and delivered a clean, professional ed-tech website that aligned perfectly with our expectations. The communication throughout the process was smooth and efficient, which made the entire journey even more seamless. I would highly recommend your services to anyone looking for quality web development solutions.</p>
+        <div class="testi-divider"></div>
+
+        <div style="margin-bottom: 1.5rem; border: 1px solid var(--border); overflow: hidden;">
+          <div class="meta-label" style="padding: .75rem 1rem .4rem;">Email proof</div>
+          <img
+            src="prakhar-email-proof.png"
+            alt="Email from Prakhar Singh — Techversity.AI"
+            style="width:100%; display:block; border-top: 1px solid var(--border); opacity:.88; transition:opacity .25s;"
+            onmouseover="this.style.opacity='1'"
+            onmouseout="this.style.opacity='.88'"
+          >
+        </div>
+
+        <div class="testi-author" style="margin-top: auto;">
+          <div class="testi-avatar">PS</div>
+          <div>
+            <div class="testi-name">Prakhar Singh</div>
+            <div class="testi-role">Founder · Techversity.AI · Ed-Tech &amp; Study Abroad</div>
+          </div>
+          <span class="testi-source">Via Email</span>
+        </div>
+
+      </div><!-- /card 2 -->
+
+
+      <!-- ═══════════════════════════════════════════
+           CARD 3 — Saloni Bansal · Chemical Distributors (Business · In Progress)
+           ═══════════════════════════════════════════ -->
+      <div class="testi-card in-progress reveal" data-category="business">
+
+        <div class="progress-badge">
+          <span class="progress-dot"></span>
+          Project in progress
+        </div>
+
+        <div class="testi-quote-mark">"</div>
+        <p class="testi-text" style="margin-top:.5rem;">Jagannath Ji Enterprises has engaged Easy Web Presence to build a professional web presence for her chemical distribution business. The project is currently under active development — this card will be updated with her full testimonial and email proof upon completion.</p>
+        <div class="testi-divider"></div>
+
+        <div style="
+          border: 1px solid var(--border);
+          padding: 1rem 1.25rem;
+          background: rgba(201,149,74,.03);
+          margin-bottom: 1.5rem;
+          font-size: .8rem;
+          color: var(--muted);
+          line-height: 1.7;
+        ">
+          <div class="meta-label" style="margin-bottom:.5rem;">Project scope</div>
+          Business website for a chemical supplier &amp; distributor — product catalogue, enquiry forms, and a credibility-first design built for B2B buyers.
+        </div>
+
+        <div class="testi-author" style="margin-top: auto;">
+          <div class="testi-avatar">SB</div>
+          <div>
+            <div class="testi-name">Saloni Bansal</div>
+            <div class="testi-role">Business Owner · Chemical Suppliers &amp; Distributors</div>
+          </div>
+          <span class="testi-source" style="border-color:var(--gold); color:var(--gold);">Ongoing</span>
+        </div>
+
+      </div><!-- /card 3 -->
+
+    </div><!-- /testi-grid -->
   </section>
 
   <!-- SUBMIT CTA -->
@@ -540,7 +653,7 @@
           <li><a href="https://x.com/EasyWebAppear" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> (Formerly Twitter)</a></li>
           <li><a href="https://www.linkedin.com/company/easy-web-presence/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-label="Visit our LinkedIn"></i> LinkedIn</a></li>
           <li><a href="/Blog/" rel="noopener noreferrer"><i class="fa-solid fa-blog"></i> Blogs</a></li>
-          <li> <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Read our blog section"><i class="fa-brands fa-youtube"></i> Youtube </a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Read our blog section"><i class="fa-brands fa-youtube"></i> Youtube</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -558,9 +671,6 @@
     </div>
   </footer>
 
-  <script src="script.js" defer>
-    
-    
-</script>
+<script src="script.js"></script>
 </body>
 </html>
