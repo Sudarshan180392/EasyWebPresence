@@ -1,5 +1,5 @@
 /* =========================================================
-   EXIT-INTENT POPUP â€” drop-in script
+   EXIT-INTENT POPUP — drop-in script
    =========================================================
    HOW TO USE:
    1. Save this file as "exit-popup.js" and upload it to your
@@ -9,7 +9,7 @@
 
         <script src="exit-popup.js"></script>
 
-   That's it â€” no other HTML or CSS needs to be added to your
+   That's it — no other HTML or CSS needs to be added to your
    pages. This script injects everything itself.
 
    CUSTOMIZE:
@@ -20,8 +20,10 @@
      backups in case those variables aren't defined on a given page.
    - Headline / offer text: edit the HTML in injectMarkup().
    - Delay / cooldown timings: edit the constants in initPopup().
-   - What happens on submit: edit the form submit handler near
-     the bottom â€” currently just shows an alert.
+   - What happens on submit: this currently sends email + phone to a
+     Google Apps Script Web App URL (which writes them as a row in a
+     Google Sheet). Replace SHEET_ENDPOINT near the bottom with your
+     own deployment URL.
    ========================================================= */
 
 (function () {
@@ -211,22 +213,25 @@
           <div class="exit-popup-header">
             <button class="exit-popup-close" id="exitPopupClose" aria-label="Close">&times;</button>
             <div class="exit-popup-eyebrow">&#9670; Before You Go</div>
-            <h2>Get <em>10% Off</em> Your Project</h2>
-            <p>Leave your number and we'll send your discount code on WhatsApp</p>
+            <h2>Get <em>10% Off</em> on Your Project and on every project you refer<sup>•</sup></h2>
+            <p>Leave your whatsapp and we'll send your discount code/referal link</p>
           </div>
           <div class="exit-popup-body">
             <form id="exitPopupForm">
+            <label for="exitPopupPhone">Mobile Number</label>
+              <div class="exit-popup-input">
+                <input type="tel" id="exitPopupPhone" name="phone" placeholder="Enter your mobile number" required pattern="[0-9]{10}">
+              </div>
               <label for="exitPopupEmail">Email Address</label>
               <div class="exit-popup-input">
                 <input type="email" id="exitPopupEmail" name="email" placeholder="Enter your email address" required>
               </div>
-              <label for="exitPopupPhone">Mobile Number</label>
-              <div class="exit-popup-input">
-                <input type="tel" id="exitPopupPhone" name="phone" placeholder="Enter your mobile number" required pattern="[0-9]{10}">
-              </div>
               <button type="submit" class="exit-popup-submit">Claim My Discount</button>
               <div class="exit-popup-fineprint">
                 We respect your privacy. No spam, ever.
+                <br>
+                <sup>*</sup> Terms & Condition apply. For details see our <a href="/terms" style="color: var(--gold, #c9954a); text-decoration: underline;">Terms of Service</a>.
+                
               </div>
             </form>
           </div>
@@ -291,13 +296,10 @@
       e.preventDefault();
 
       // ====================================================================
-      // STEP 1: Sign up at https://formspree.io and create a form.
-      // STEP 2: Replace YOUR_FORM_ID below with the ID Formspree gives you
-      //         (the part after https://formspree.io/f/ )
-      // STEP 3: Submit the form once on your live site, then click the
-      //         confirmation link Formspree emails you - this activates it.
+      // Paste the Web App URL from your Apps Script deployment below.
+      // It looks like: https://script.google.com/macros/s/AKfycb.../exec
       // ====================================================================
-      var FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+      var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbytX8if9RK9vFxEUeH3Zhhkeht0x6aa_XrvVNSpU3sAy3ppC-gzn10xbhGFyYRTEHLvhg/exec';
 
       var submitBtn = form.querySelector('.exit-popup-submit');
       var emailVal = document.getElementById('exitPopupEmail').value;
@@ -306,22 +308,24 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting...';
 
-      fetch(FORMSPREE_ENDPOINT, {
+      var body = new URLSearchParams();
+      body.append('email', emailVal);
+      body.append('phone', phoneVal);
+      body.append('source_page', window.location.href);
+
+      // NOTE: Google Apps Script web apps don't send CORS headers back,
+      // so we use mode:'no-cors'. This means the browser can't read the
+      // response - the fetch will "succeed" as long as the request reaches
+      // Google's servers, even before we know if the script ran without
+      // error. To verify it's actually working, check your Google Sheet
+      // for new rows after testing.
+      fetch(SHEET_ENDPOINT, {
         method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: emailVal,
-          phone: phoneVal,
-          _subject: 'New 10% off lead - exit popup',
-          source_page: window.location.href
-        })
+        mode: 'no-cors',
+        body: body
       })
-        .then(function (response) {
-          if (!response.ok) throw new Error('Submission failed');
-          alert('Thanks! Your code is WELCOME10 - we will text it to you shortly.');
+        .then(function () {
+          alert('Thanks! We will whatsapp you your code shortly.');
           sessionStorage.setItem(STORAGE_KEY, '1'); // don't show again this session
           closePopup();
         })
