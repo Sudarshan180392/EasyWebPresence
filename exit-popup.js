@@ -299,7 +299,7 @@
       // Paste the Web App URL from your Apps Script deployment below.
       // It looks like: https://script.google.com/macros/s/AKfycb.../exec
       // ====================================================================
-      var SHEET_ENDPOINT = 'https://script.google.com/macros/library/d/1oMAiicCEXl776qTnlS8HPysLNKJk5FYAdZIMmOEJJkXqKlNxW2IxzjIG/2';
+      var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbytX8if9RK9vFxEUeH3Zhhkeht0x6aa_XrvVNSpU3sAy3ppC-gzn10xbhGFyYRTEHLvhg/exec';
 
       var submitBtn = form.querySelector('.exit-popup-submit');
       var emailVal = document.getElementById('exitPopupEmail').value;
