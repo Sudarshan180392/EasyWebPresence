@@ -1,36 +1,9 @@
-/* =========================================================
-   EXIT-INTENT POPUP — drop-in script
-   =========================================================
-   HOW TO USE:
-   1. Save this file as "exit-popup.js" and upload it to your
-      website (e.g. alongside your other .js/.css files).
-   2. On every page where you want the popup, add this single
-      line right before the closing </body> tag:
-
-        <script src="exit-popup.js"></script>
-
-   That's it — no other HTML or CSS needs to be added to your
-   pages. This script injects everything itself.
-
-   CUSTOMIZE:
-   - Colors/fonts: this now pulls from your site's existing CSS variables
-     (--navy-mid, --gold, --gold-light, --white, --muted, --border) and
-     fonts ('Cormorant Garamond', 'Jost'), so it matches style.css
-     automatically. The fallback values after each var() are just
-     backups in case those variables aren't defined on a given page.
-   - Headline / offer text: edit the HTML in injectMarkup().
-   - Delay / cooldown timings: edit the constants in initPopup().
-   - What happens on submit: this currently sends email + phone to a
-     Google Apps Script Web App URL (which writes them as a row in a
-     Google Sheet). Replace SHEET_ENDPOINT near the bottom with your
-     own deployment URL.
-   ========================================================= */
+/* 
+   EXIT-INTENT POPUP 
+  */
 
 (function () {
 
-  // ---------------------------------------------------------
-  // 1. INJECT CSS
-  // ---------------------------------------------------------
   function injectStyles() {
     var css = `
       .exit-popup-overlay {
@@ -249,7 +222,7 @@
     var closeBtn = document.getElementById('exitPopupClose');
     var form = document.getElementById('exitPopupForm');
     var STORAGE_KEY = 'exitPopupConverted'; // only set once they actually claim the offer
-    var COOLDOWN_MS = 4000;                 // wait this long after a close before it can re-trigger
+    var COOLDOWN_MS = 9000;                 // wait this long after a close before it can re-trigger
     var INACTIVITY_MS = 30000;              // fallback delay if exit-intent never fires
     var visible = false;
 
@@ -295,10 +268,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // ====================================================================
-      // Paste the Web App URL from your Apps Script deployment below.
-      // It looks like: https://script.google.com/macros/s/AKfycb.../exec
-      // ====================================================================
+
       var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbytX8if9RK9vFxEUeH3Zhhkeht0x6aa_XrvVNSpU3sAy3ppC-gzn10xbhGFyYRTEHLvhg/exec';
 
       var submitBtn = form.querySelector('.exit-popup-submit');
@@ -313,12 +283,7 @@
       body.append('phone', phoneVal);
       body.append('source_page', window.location.href);
 
-      // NOTE: Google Apps Script web apps don't send CORS headers back,
-      // so we use mode:'no-cors'. This means the browser can't read the
-      // response - the fetch will "succeed" as long as the request reaches
-      // Google's servers, even before we know if the script ran without
-      // error. To verify it's actually working, check your Google Sheet
-      // for new rows after testing.
+      
       fetch(SHEET_ENDPOINT, {
         method: 'POST',
         mode: 'no-cors',
