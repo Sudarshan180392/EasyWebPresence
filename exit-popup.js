@@ -222,7 +222,7 @@
     var closeBtn = document.getElementById('exitPopupClose');
     var form = document.getElementById('exitPopupForm');
     var STORAGE_KEY = 'exitPopupConverted'; // only set once they actually claim the offer
-    var COOLDOWN_MS = 9000;                 // wait this long after a close before it can re-trigger
+    var COOLDOWN_MS = 19000;                 // wait this long after a close before it can re-trigger
     var INACTIVITY_MS = 30000;              // fallback delay if exit-intent never fires
     var visible = false;
 
