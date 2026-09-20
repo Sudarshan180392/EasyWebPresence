@@ -221,21 +221,21 @@
     var overlay = document.getElementById('exitPopupOverlay');
     var closeBtn = document.getElementById('exitPopupClose');
     var form = document.getElementById('exitPopupForm');
-    var STORAGE_KEY = 'exitPopupConverted'; // only set once they actually claim the offer
-    var COOLDOWN_MS = 19000;                 // wait this long after a close before it can re-trigger
+    var STORAGE_KEY = 'exitPopupShown';      // show at most once per browsing session
     var INACTIVITY_MS = 30000;              // fallback delay if exit-intent never fires
     var visible = false;
 
     function showPopup() {
       if (visible) return;
-      if (sessionStorage.getItem(STORAGE_KEY)) return; // already claimed the offer this session
+      if (sessionStorage.getItem(STORAGE_KEY)) return; // already shown this session
+      sessionStorage.setItem(STORAGE_KEY, '1');
       overlay.classList.add('active');
       visible = true;
     }
 
     function closePopup() {
       overlay.classList.remove('active');
-      setTimeout(function () { visible = false; }, COOLDOWN_MS);
+      visible = false;
     }
 
     // Desktop: exit-intent (mouse moves toward top of the window)
@@ -291,7 +291,6 @@
       })
         .then(function () {
           alert('Thanks! We will whatsapp you your code shortly.');
-          sessionStorage.setItem(STORAGE_KEY, '1'); // don't show again this session
           closePopup();
         })
         .catch(function () {
